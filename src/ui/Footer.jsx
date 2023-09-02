@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="flex bg-seashellPink py-6 items-center justify-between px-6">
       <div>
-        <img src="../../public/EM Logo 2.svg" alt="" className="h-14" />
+        <img src="../../public/EMLogo.svg" alt="" className="h-14" />
       </div>
       <div className="flex flex-col items-center space-y-3">
         <div className="space-x-4">

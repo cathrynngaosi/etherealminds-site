@@ -1,10 +1,327 @@
 {
   "products": [
     {
-      "name": "Which is the most popular JavaScript framework?",
-      "options": ["Angular", "React", "Svelte", "Vue"],
-      "correctOption": 1,
-      "points": 10
+      "id": "P-001",
+      "name": "20oz Tumbler",
+      "category": "Tumblers",
+      "colors": ["White", "Black", "Rosegold"],
+      "description": [
+        "Capacity: 20oz",
+        "304 Stainless Steel inside & out",
+        "Suitable for hot & cold drinks"
+      ],
+      "price": 350,
+      "images": [
+        "../images/20oz-tumblers/cover.JPG",
+        "../images/20oz-tumblers/1.JPG",
+        "../images/20oz-tumblers/2.JPG",
+        "../images/20oz-tumblers/3.JPG",
+        "../images/20oz-tumblers/4.JPG"
+      ]
+    },
+    {
+      "id": "P-002",
+      "name": "Double Walled Mug",
+      "category": "Mugs",
+      "colors": [],
+      "description": [
+        "Capacity: 350ml",
+        "Made of borosilicate glass",
+        "Suitable for hot & cold drinks"
+      ],
+      "price": 380,
+      "images": [
+        "../images/double-walled-mugs/cover.JPG",
+        "../images/double-walled-mugs/1.JPG",
+        "../images/double-walled-mugs/2.JPG",
+        "../images/double-walled-mugs/3.JPG",
+        "../images/double-walled-mugs/4.JPG"
+      ]
+    },
+    {
+      "id": "P-003",
+      "name": "Egg Tumbler",
+      "category": "Tumblers",
+      "colors": [
+        "White",
+        "Black",
+        "Rosegold",
+        "Pink",
+        "Green",
+        "Dark Blue",
+        "Red",
+        "Silver"
+      ],
+      "description": [
+        "Capacity: 10oz",
+        "304 Stainless Steel inside & out",
+        "Suitable for hot & cold drinks"
+      ],
+      "price": 300,
+      "images": [
+        "../images/egg-tumblers/cover.JPG",
+        "../images/egg-tumblers/1.JPG",
+        "../images/egg-tumblers/2.JPG",
+        "../images/egg-tumblers/3.JPG"
+      ]
+    },
+    {
+      "id": "P-004",
+      "name": "Glass Mug",
+      "category": "Mugs",
+      "colors": [],
+      "description": ["Capacity: 370ml", "Suitable for hot & cold drinks"],
+      "price": 190,
+      "images": ["../images/glass-mugs/cover.JPG", "../images/glass-mugs/1.JPG"]
+    },
+    {
+      "id": "P-005",
+      "name": "Glass Tumbler",
+      "category": "Tumblers",
+      "colors": [],
+      "description": [
+        "Capacity: 350ml",
+        "Weight: ~400g",
+        "Suitable for cold drinks only!"
+      ],
+      "price": 300,
+      "images": [
+        "../images/glass-tumblers/cover.JPG",
+        "../images/glass-tumblers/1.JPG",
+        "../images/glass-tumblers/2.JPG",
+        "../images/glass-tumblers/3.JPG",
+        "../images/glass-tumblers/4.JPG"
+      ]
+    },
+    {
+      "id": "P-006",
+      "name": "Grande Mug",
+      "category": "Mugs",
+      "colors": [],
+      "description": [
+        "Capacity: 400ml",
+        "Perfect for hot & cold drinks, cereal, and ice cream!"
+      ],
+      "price": 250,
+      "images": [
+        "../images/grande-mugs/cover.JPG",
+        "../images/grande-mugs/1.JPG",
+        "../images/grande-mugs/2.JPG",
+        "../images/grande-mugs/3.JPG",
+        "../images/grande-mugs/4.JPG"
+      ]
+    },
+    {
+      "id": "P-007",
+      "name": "A5 Leather Binder",
+      "category": "Leather Items",
+      "colors": ["Black", "Pink", "Lavender", "Blue", "Brown", "Yellow"],
+      "description": [
+        "Size: A5 (9.5 x 7 inches)",
+        "Each binder will come with one free pack of blank leaf pages"
+      ],
+      "price": 600,
+      "images": [
+        "../images/leather-binder/cover.JPG",
+        "../images/leather-binder/1.JPG",
+        "../images/leather-binder/2.JPG",
+        "../images/leather-binder/3.JPG"
+      ]
+    },
+    {
+      "id": "P-008",
+      "name": "A6 Leather Binder",
+      "category": "Leather Items",
+      "colors": ["Black", "Pink", "Lavender", "Blue", "Brown", "Yellow"],
+      "description": [
+        "Size: A6 (7.5 x 5 inches)",
+        "Each binder will come with one free pack of blank leaf pages"
+      ],
+      "price": 480,
+      "images": [
+        "../images/leather-binder/cover.JPG",
+        "../images/leather-binder/1.JPG",
+        "../images/leather-binder/2.JPG",
+        "../images/leather-binder/3.JPG"
+      ]
+    },
+    {
+      "id": "P-009",
+      "name": "Leather Keychain",
+      "category": "Leather Items",
+      "colors": [
+        "White",
+        "Black",
+        "Light Grey",
+        "Blush",
+        "Navy Blue",
+        "Taupe",
+        "Baby Blue",
+        "Wine",
+        "Purple",
+        "Old Rose"
+      ],
+      "description": ["Faux Leather"],
+      "price": 130,
+      "images": [
+        "../images/leather-keychains/cover.JPG",
+        "../images/leather-keychains/1.JPG",
+        "../images/leather-keychains/2.JPG"
+      ]
+    },
+    {
+      "id": "P-010",
+      "name": "Large Jewelry Box",
+      "category": "Jewelry Boxes",
+      "colors": ["Glitter White", "Pink"],
+      "description": ["Faux Leather", "Size: 6.50 x 4.52 x 2.17 inches"],
+      "price": 490,
+      "images": [
+        "../images/lg-jewelry-box/cover.JPG",
+        "../images/lg-jewelry-box/1.JPG",
+        "../images/lg-jewelry-box/2.JPG",
+        "../images/lg-jewelry-box/3.JPG",
+        "../images/lg-jewelry-box/4.JPG",
+        "../images/lg-jewelry-box/5.JPG"
+      ]
+    },
+    {
+      "id": "P-011",
+      "name": "Macaron Mug",
+      "category": "Mugs",
+      "colors": ["Pink", "Mint Green", "Blue", "Yellow"],
+      "description": ["Capacity: 250ml", "Ceramic Mugs"],
+      "price": 330,
+      "images": [
+        "../images/macaron-mugs/cover.JPG",
+        "../images/macaron-mugs/1.JPG",
+        "../images/macaron-mugs/2.JPG",
+        "../images/macaron-mugs/3.JPG",
+        "../images/macaron-mugs/4.JPG",
+        "../images/macaron-mugs/5.JPG"
+      ]
+    },
+    {
+      "id": "P-012",
+      "name": "1L Milk Carton Tumbler",
+      "category": "Tumblers",
+      "colors": [],
+      "description": ["Capacity: 1 Liter"],
+      "price": 450,
+      "images": [
+        "../images/milk-carton-tumblers/cover.JPG",
+        "../images/milk-carton-tumblers/1.JPG",
+        "../images/milk-carton-tumblers/2.JPG",
+        "../images/milk-carton-tumblers/3.JPG",
+        "../images/milk-carton-tumblers/4.JPG",
+        "../images/milk-carton-tumblers/5.JPG"
+      ]
+    },
+    {
+      "id": "P-012",
+      "name": "500ml Milk Carton Tumbler",
+      "category": "Tumblers",
+      "colors": [],
+      "description": ["Capacity: 500 ml"],
+      "price": 350,
+      "images": [
+        "../images/milk-carton-tumblers/cover.JPG",
+        "../images/milk-carton-tumblers/1.JPG",
+        "../images/milk-carton-tumblers/2.JPG",
+        "../images/milk-carton-tumblers/3.JPG",
+        "../images/milk-carton-tumblers/4.JPG",
+        "../images/milk-carton-tumblers/5.JPG"
+      ]
+    },
+    {
+      "id": "P-013",
+      "name": "Passport Cover",
+      "category": "Leather Items",
+      "colors": [
+        "Flamingo Pink",
+        "Old Rose",
+        "Lavender",
+        "Red",
+        "Dark Teal",
+        "Light Blue",
+        "Black",
+        "Bronze",
+        "Silver",
+        "Champagne",
+        "Gold"
+      ],
+      "description": ["Made of leather"],
+      "price": 350,
+      "images": [
+        "../images/passport-covers/cover.JPG",
+        "../images/passport-covers/1.JPG",
+        "../images/passport-covers/2.JPG",
+        "../images/passport-covers/3.JPG"
+      ]
+    },
+    {
+      "id": "P-014",
+      "name": "Round Jewelry Box",
+      "category": "Jewelry Boxes",
+      "colors": ["White", "Pink", "Dark Silver"],
+      "description": ["Made of PU Leather"],
+      "price": 400,
+      "images": [
+        "../images/r-jewelry-box/cover.JPG",
+        "../images/r-jewelry-box/1.JPG",
+        "../images/r-jewelry-box/2.JPG",
+        "../images/r-jewelry-box/3.JPG"
+      ]
+    },
+    {
+      "id": "P-015",
+      "name": "Small Jewelry Box",
+      "category": "Jewelry Boxes",
+      "colors": ["Off White", "Blush"],
+      "description": ["Made of Faux Leather", "Size: 3.9 x 3.9 x 1.85 inches"],
+      "price": 350,
+      "images": [
+        "../images/sm-jewelry-box/cover.PNG",
+        "../images/sm-jewelry-box/1.PNG",
+        "../images/sm-jewelry-box/2.PNG",
+        "../images/sm-jewelry-box/3.PNG"
+      ]
+    },
+    {
+      "id": "P-016",
+      "name": "Vacuum Tumbler",
+      "category": "Tumblers",
+      "colors": [
+        "White",
+        "Black",
+        "Gold",
+        "Tiffany Blue",
+        "Pink",
+        "Dark Pink",
+        "Red"
+      ],
+      "description": ["Capacity: 500 ml", "Suitable for hot & cold drinks"],
+      "price": 250,
+      "images": [
+        "../images/vacuum-tumblers/cover.JPG",
+        "../images/vacuum-tumblers/1.JPG",
+        "../images/vacuum-tumblers/2.JPG",
+        "../images/vacuum-tumblers/3.JPG",
+        "../images/vacuum-tumblers/4.JPG"
+      ]
+    },
+    {
+      "id": "P-017",
+      "name": "Wine Glass",
+      "category": "Glass Items",
+      "colors": [],
+      "description": ["Capacity: 480 ml", "Suitable for cold drinks only!"],
+      "price": 250,
+      "images": [
+        "../images/wine-glass/cover.PNG",
+        "../images/wine-glass/1.PNG",
+        "../images/wine-glass/2.PNG"
+      ]
     }
   ]
 }

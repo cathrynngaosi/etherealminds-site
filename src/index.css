@@ -5,3 +5,7 @@
 .nav-icon {
   @apply text-2xl hover:cursor-pointer;
 }
+
+h1 {
+  @apply font-semibold text-2xl leading-10;
+}
