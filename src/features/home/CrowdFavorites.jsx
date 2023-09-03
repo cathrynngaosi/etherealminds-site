@@ -23,7 +23,7 @@ function CrowdFavorites() {
 
         <ProductCard
           name="Small Jewelry Box"
-          price="250"
+          price="350"
           img="../src/data/images/sm-jewelry-box/cover.JPG"
         />
       </div>
