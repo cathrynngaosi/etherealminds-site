@@ -2,6 +2,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./pages/Home";
 import Shop, { loader as collectionsLoader } from "./pages/Shop";
+import ProductList, { loader as listLoader } from "./features/shop/ProductList";
+import ProductView, {
+  loader as productLoader,
+} from "./features/shop/ProductView";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +19,16 @@ const router = createBrowserRouter([
         path: "/shop",
         element: <Shop />,
         loader: collectionsLoader,
+      },
+      {
+        path: "/shop/:list",
+        element: <ProductList />,
+        loader: listLoader,
+      },
+      {
+        path: "/shop/:list/:product",
+        element: <ProductView />,
+        loader: productLoader,
       },
     ],
   },

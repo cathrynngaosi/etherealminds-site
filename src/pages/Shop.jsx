@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { getCollections } from "../services/apiShop";
+import { getAllCollections } from "../services/apiShop";
 import CollectionsCard from "../features/shop/CollectionsCard";
 
 function Shop() {
@@ -19,7 +19,7 @@ function Shop() {
 }
 
 export async function loader() {
-  const collections = await getCollections();
+  const collections = await getAllCollections();
   return collections;
 }
 
