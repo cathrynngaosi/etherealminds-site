@@ -1,9 +1,11 @@
 import { getColorBlockCss } from "../../utils/helpers";
 
-function ColorBlock({ color, handleClick }) {
+function ColorBlock({ color, handleClick, selectedColor }) {
   const bgColor = getColorBlockCss(color);
 
-  const blockStyle = `h-9 w-9 ${bgColor} border border-slate-10	cursor-pointer`;
+  const blockStyle = `${bgColor} ${
+    selectedColor === color ? "color-block-selected" : "color-block"
+  }`;
   return <div className={blockStyle} onClick={() => handleClick(color)}></div>;
 }
 

@@ -4,7 +4,10 @@ import { formatCurrency, getCustomColorCss } from "../utils/helpers";
 import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
 import ColorBlock from "../features/products/ColorBlock";
+import FontOptions from "../features/products/FontOptions";
 import SideImageThumbnail from "../features/products/SideImageThumbnail";
+import DecalColorOptions from "../features/products/DecalColorOptions";
+import ProductSpecs from "../features/products/ProductSpecs";
 
 function ProductView() {
   const productDetails = useLoaderData();
@@ -62,6 +65,7 @@ function ProductView() {
             <SideImageThumbnail
               img={img}
               key={img}
+              display={displayPhoto}
               handleClick={() => handleClickSidePhoto(img)}
             />
           ))}
@@ -83,7 +87,7 @@ function ProductView() {
           <div className="space-y-1">
             <div className="flex items-center space-x-1 text-darkBrown">
               <h2 className="uppercase text-lg font-semibold ">
-                Product Color:{" "}
+                Product Color:
               </h2>
               <span className="font-medium">{productColor}</span>
             </div>
@@ -92,6 +96,7 @@ function ProductView() {
                 <ColorBlock
                   color={color}
                   key={color}
+                  selectedColor={productColor}
                   handleClick={() => handleClickProdColor(color)}
                 />
               ))}
@@ -111,71 +116,16 @@ function ProductView() {
           />
         </div>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0">
-          <div className="space-y-1 w-1/2">
-            <div className="flex items-center space-x-1 text-darkBrown">
-              <h2 className="uppercase text-lg font-semibold ">Font:</h2>
-              <span className="font-medium capitalize">
-                {customFontDisplay}
-              </span>
-            </div>
+          <FontOptions
+            customFontDisplay={customFontDisplay}
+            customFontCss={customFontCss}
+            handleClickCustomFont={handleClickCustomFont}
+          />
 
-            <div className="space-x-1 flex">
-              <div
-                className="px-4 py-[1px] text-md items-center flex border cursor-pointer font-anton"
-                onClick={() => handleClickCustomFont("font-anton")}
-              >
-                <span>Anton</span>
-              </div>
-              <div
-                className="px-4 py-[1px] text-xl items-center flex border cursor-pointer font-cookie"
-                onClick={() => handleClickCustomFont("font-cookie")}
-              >
-                <span> Cookie</span>
-              </div>
-              <div
-                className="px-4 py-[1px] text-xl items-center flex border cursor-pointer font-tenali"
-                onClick={() => handleClickCustomFont("font-tenali")}
-              >
-                <span className="mt-[5px]"> Tenali</span>
-              </div>
-              <div
-                className="px-4 py-[1px] text-sm items-center flex border cursor-pointer font-pacifico"
-                onClick={() => handleClickCustomFont("font-pacifico")}
-              >
-                <span> Pacifico</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-1 w-1/2">
-            <div className="flex items-center space-x-1 text-darkBrown">
-              <h2 className="uppercase text-lg font-semibold ">Decal Color:</h2>
-              <span className="font-medium">{customColorDisplay}</span>
-            </div>
-
-            <div className="flex space-x-1">
-              <div
-                className="h-9 w-9 bg-black border border-slate-10 cursor-pointer"
-                onClick={() => handleClickCustomColor("Black")}
-              ></div>
-              <div
-                className="h-9 w-9 bg-white border border-slate-10	cursor-pointer"
-                onClick={() => handleClickCustomColor("White")}
-              ></div>
-              <div
-                className="h-9 w-9 bg-gold border border-slate-10	cursor-pointer"
-                onClick={() => handleClickCustomColor("Gold")}
-              ></div>
-              <div
-                className="h-9 w-9 bg-rosegold border border-slate-10	cursor-pointer"
-                onClick={() => handleClickCustomColor("Rosegold")}
-              ></div>
-              <div
-                className="h-9 w-9 bg-gradient-to-b from-cyan-400 to-rose-400 border border-slate-10	cursor-pointer"
-                onClick={() => handleClickCustomColor("Holo")}
-              ></div>
-            </div>
-          </div>
+          <DecalColorOptions
+            customColorDisplay={customColorDisplay}
+            handleClickCustomColor={handleClickCustomColor}
+          />
         </div>
 
         <div>
@@ -193,16 +143,8 @@ function ProductView() {
             <FiHeart />
           </button>
         </div>
-        <div className="space-y-1">
-          <h2 className="uppercase text-lg font-semibold text-darkBrown">
-            Product Specifications
-          </h2>
-          <ul>
-            {description.map((desc, key) => (
-              <li key={key}>- {desc}</li>
-            ))}
-          </ul>
-        </div>
+
+        <ProductSpecs description={description} />
       </div>
     </section>
   );

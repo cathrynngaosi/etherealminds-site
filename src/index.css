@@ -9,3 +9,26 @@
 h1 {
   @apply font-semibold text-2xl leading-10;
 }
+
+.color-block {
+  @apply h-9 w-9 border border-slate-100 cursor-pointer hover:border-darkBrown duration-150;
+}
+
+.color-block-selected {
+  @apply h-9 w-9 border-2 cursor-pointer border-darkBrown hover:border-darkBrown duration-150;
+}
+
+.font-box {
+  @apply px-4 py-1 items-center flex border cursor-pointer hover:border-darkBrown duration-150;
+}
+
+.font-box-selected {
+  @apply px-4 py-1 items-center flex border-2 cursor-pointer border-darkBrown hover:border-darkBrown duration-150;
+}
+
+.thumbnail {
+  @apply h-20 cursor-pointer;
+}
+.thumbnail-selected {
+  @apply h-20 cursor-pointer border-2 border-darkBrown;
+}

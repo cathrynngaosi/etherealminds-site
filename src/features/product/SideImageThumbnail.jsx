@@ -1,9 +1,9 @@
-function SideImageThumbnail({ img, handleClick }) {
+function SideImageThumbnail({ img, handleClick, display }) {
   return (
     <img
       src={img}
       key={img}
-      className="h-20 cursor-pointer"
+      className={display === img ? "thumbnail-selected" : "thumbnail"}
       onClick={() => handleClick(img)}
     />
   );
