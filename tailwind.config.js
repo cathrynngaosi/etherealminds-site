@@ -30,7 +30,7 @@ export default {
         gold: "#C3963A",
         tiffanyBlue: "#09B5AF",
         silver: "#BABABA",
-        yellow: "#F7F29B",
+        yellow: "#F5F2B5",
         mintGreen: "#A5E9CA",
       },
       backgroundImage: {
