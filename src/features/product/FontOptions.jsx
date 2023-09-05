@@ -4,18 +4,18 @@ function FontOptions({
   handleClickCustomFont,
 }) {
   return (
-    <div className="space-y-1 w-1/2">
+    <div className="w-1/2 space-y-1">
       <div className="flex items-center space-x-1 text-darkBrown">
-        <h2 className="uppercase text-lg font-semibold ">Font:</h2>
+        <h2 className="text-lg font-semibold uppercase ">Font:</h2>
         <span className="font-medium capitalize">{customFontDisplay}</span>
       </div>
 
-      <div className="space-x-1 flex">
+      <div className="flex space-x-1">
         <div
           className={
             customFontCss === "font-anton"
-              ? "text-md font-anton font-box-selected"
-              : "text-md font-anton font-box"
+              ? "text-md font-box-selected font-anton"
+              : "text-md font-box font-anton"
           }
           onClick={() => handleClickCustomFont("font-anton")}
         >
@@ -24,8 +24,8 @@ function FontOptions({
         <div
           className={
             customFontCss === "font-cookie"
-              ? "text-xl font-cookie font-box-selected"
-              : "text-xl font-cookie font-box"
+              ? "font-box-selected font-cookie text-xl"
+              : "font-box font-cookie text-xl"
           }
           onClick={() => handleClickCustomFont("font-cookie")}
         >
@@ -34,8 +34,8 @@ function FontOptions({
         <div
           className={
             customFontCss === "font-tenali"
-              ? "text-xl font-tenali font-box-selected"
-              : "text-xl font-tenali font-box"
+              ? "font-box-selected font-tenali text-xl"
+              : "font-box font-tenali text-xl"
           }
           onClick={() => handleClickCustomFont("font-tenali")}
         >
@@ -44,8 +44,8 @@ function FontOptions({
         <div
           className={
             customFontCss === "font-pacifico"
-              ? "text-sm font-pacifico font-box-selected"
-              : "text-sm font-pacifico font-box"
+              ? "font-box-selected font-pacifico text-sm"
+              : "font-box font-pacifico text-sm"
           }
           onClick={() => handleClickCustomFont("font-pacifico")}
         >

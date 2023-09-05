@@ -1,7 +1,7 @@
 function ProductSpecs({ description }) {
   return (
     <div className="space-y-1">
-      <h2 className="uppercase text-lg font-semibold text-darkBrown">
+      <h2 className="text-lg font-semibold uppercase text-darkBrown">
         Product Specifications
       </h2>
       <ul>

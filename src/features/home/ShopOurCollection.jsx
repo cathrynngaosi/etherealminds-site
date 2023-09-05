@@ -3,11 +3,11 @@ import CollectionsMiniPreview from "../../ui/CollectionsMiniPreview";
 function ShopOurCollection() {
   return (
     <section className="p-10">
-      <div className="m-auto text-center mb-10">
+      <div className="m-auto mb-10 text-center">
         <h1>shop our collection</h1>
       </div>
 
-      <div className="flex justify-center items-center space-x-10">
+      <div className="flex items-center justify-center space-x-10">
         <CollectionsMiniPreview
           name="tumblers"
           img="../src/data/images/vacuum-tumblers/cover.JPG"

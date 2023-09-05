@@ -7,9 +7,9 @@ function Shop() {
 
   return (
     <section className="px-10 py-5">
-      <h1 className="uppercase mb-5">Collections</h1>
+      <h1 className="mb-5 uppercase">Collections</h1>
 
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {collections.map((collection) => (
           <CollectionsCard collection={collection} key={collection.name} />
         ))}

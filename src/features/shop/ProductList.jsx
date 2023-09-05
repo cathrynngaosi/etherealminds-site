@@ -12,9 +12,9 @@ function ProductList() {
   }, []);
   return (
     <section className="px-10 py-5">
-      <h1 className="uppercase mb-5">{formatTitle(listName)}</h1>
+      <h1 className="mb-5 uppercase">{formatTitle(listName)}</h1>
 
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {productList.map((prod) => (
           <ProductCard
             key={prod.id}

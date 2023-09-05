@@ -14,7 +14,7 @@ function ProductView() {
   const { name, price, images, colors, description } = productDetails[0];
 
   const [customStyle, setCustomStyle] = useState(
-    "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default"
+    "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default",
   );
   const [customText, setCustomText] = useState("");
   const [customFontCss, setCustomFontCss] = useState("font-anton");
@@ -58,9 +58,9 @@ function ProductView() {
   }
 
   return (
-    <section className="flex py-10 md:px-14 px-10 space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row">
-      <div className="md:w-2/4 flex md:space-x-4 flex-col-reverse md:flex-row">
-        <div className="md:space-y-2 space-x-1.5 md:space-x-0 flex md:flex-col mt-4 md:mt-0">
+    <section className="flex flex-col space-y-4 px-10 py-10 md:flex-row md:space-x-4 md:space-y-0 md:px-14">
+      <div className="flex flex-col-reverse md:w-2/4 md:flex-row md:space-x-4">
+        <div className="mt-4 flex space-x-1.5 md:mt-0 md:flex-col md:space-x-0 md:space-y-2">
           {images.map((img) => (
             <SideImageThumbnail
               img={img}
@@ -71,13 +71,13 @@ function ProductView() {
           ))}
         </div>
         <div className="">
-          <img src={displayPhoto} alt="" className="md:h-[35rem] w-full" />
+          <img src={displayPhoto} alt="" className="w-full md:h-[35rem]" />
         </div>
       </div>
 
-      <div className="md:w-2/4 mx-0 space-y-3 md:mt-0">
-        <div className="border-b border-lightBrown pb-3 space-y-1">
-          <h1 className="uppercase text-3xl text-darkBrown">{name}</h1>
+      <div className="mx-0 space-y-3 md:mt-0 md:w-2/4">
+        <div className="space-y-1 border-b border-lightBrown pb-3">
+          <h1 className="text-3xl uppercase text-darkBrown">{name}</h1>
           <p className="font-price text-2xl tracking-wider">
             {formatCurrency(price)}
           </p>
@@ -86,7 +86,7 @@ function ProductView() {
         {colors.length > 0 && (
           <div className="space-y-1">
             <div className="flex items-center space-x-1 text-darkBrown">
-              <h2 className="uppercase text-lg font-semibold ">
+              <h2 className="text-lg font-semibold uppercase ">
                 Product Color:
               </h2>
               <span className="font-medium">{productColor}</span>
@@ -105,17 +105,17 @@ function ProductView() {
         )}
 
         <div className="space-y-1">
-          <h2 className="uppercase text-lg font-semibold text-darkBrown">
+          <h2 className="text-lg font-semibold uppercase text-darkBrown">
             Custom Text:
           </h2>
           <input
             type="text"
             value={customText}
             onChange={(e) => setCustomText(e.target.value)}
-            className="border border-lightBrown w-full md:w-[80%] focus:outline-none py-1 rounded px-2"
+            className="w-full rounded border border-lightBrown px-2 py-1 focus:outline-none md:w-[80%]"
           />
         </div>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0">
+        <div className="flex flex-col space-y-4 md:flex-row md:space-y-0">
           <FontOptions
             customFontDisplay={customFontDisplay}
             customFontCss={customFontCss}
@@ -129,17 +129,17 @@ function ProductView() {
         </div>
 
         <div>
-          <h2 className="uppercase text-lg font-semibold text-darkBrown">
+          <h2 className="text-lg font-semibold uppercase text-darkBrown">
             Preview:
           </h2>
           <div className={customStyle}>{customText}</div>
         </div>
 
-        <div className="flex space-x-2 my-10 pb-5 border-b border-lightBrown">
-          <button className="text-white bg-mediumBrown px-10 py-2 rounded-md tracking-widest duration-150 md:w-[70%] w-[90%] ">
+        <div className="my-10 flex space-x-2 border-b border-lightBrown pb-5">
+          <button className="w-[90%] rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 md:w-[70%] ">
             add to cart
           </button>
-          <button className="text-white bg-mediumBrown px-5 py-2 rounded-md tracking-widest duration-150">
+          <button className="rounded-md bg-mediumBrown px-5 py-2 tracking-widest text-white duration-150">
             <FiHeart />
           </button>
         </div>

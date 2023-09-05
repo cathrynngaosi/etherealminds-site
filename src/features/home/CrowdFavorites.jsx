@@ -9,7 +9,7 @@ function CrowdFavorites() {
         <h1 className=" pb-10">crowd favorites</h1>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
+      <div className="flex flex-col items-center justify-center gap-10 lg:flex-row">
         <ProductCard
           name="Macaron Mug"
           price="330"
@@ -32,7 +32,7 @@ function CrowdFavorites() {
         />
       </div>
 
-      <div className="mx-auto text-center mt-4">
+      <div className="mx-auto mt-4 text-center">
         <Link to="/shop/shop-all">
           <Button> shop all</Button>
         </Link>
