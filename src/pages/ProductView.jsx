@@ -3,11 +3,11 @@ import { getProducts } from "../services/apiShop";
 import { formatCurrency, getCustomColorCss } from "../utils/helpers";
 import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
-import ColorBlock from "../features/products/ColorBlock";
-import FontOptions from "../features/products/FontOptions";
-import SideImageThumbnail from "../features/products/SideImageThumbnail";
-import DecalColorOptions from "../features/products/DecalColorOptions";
-import ProductSpecs from "../features/products/ProductSpecs";
+import ColorBlock from "../features/product/ColorBlock";
+import FontOptions from "../features/product/FontOptions";
+import SideImageThumbnail from "../features/product/SideImageThumbnail";
+import DecalColorOptions from "../features/product/DecalColorOptions";
+import ProductSpecs from "../features/product/ProductSpecs";
 
 function ProductView() {
   const productDetails = useLoaderData();
