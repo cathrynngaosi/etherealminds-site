@@ -2,11 +2,14 @@ import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import { getProducts } from "../../services/apiShop";
 import ProductCard from "../../ui/ProductCard";
 import { formatTitle } from "../../utils/helpers";
+import { useEffect } from "react";
 
 function ProductList() {
   const productList = useLoaderData();
   const { list: listName } = useParams();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="px-10 py-5">
       <h1 className="uppercase mb-5">{formatTitle(listName)}</h1>

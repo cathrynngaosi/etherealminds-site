@@ -3,7 +3,7 @@ import { getProducts } from "../services/apiShop";
 import { formatCurrency, getCustomColorCss } from "../utils/helpers";
 import ColorBlock from "../features/products/ColorBlock";
 import { FiHeart } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SideImageThumbnail from "../features/products/SideImageThumbnail";
 
 function ProductView() {
@@ -23,10 +23,14 @@ function ProductView() {
   const [displayPhoto, setDisplayPhoto] = useState(images[0]);
 
   useEffect(() => {
-    async function generatePreview() {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    function generatePreview() {
       const initialStyle =
         "focus:outline-none text-2xl border rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default";
-      setCustomStyle(`${initialStyle} ${customFontCss}  ${customColorCss}`);
+      setCustomStyle(`${initialStyle} ${customFontCss} ${customColorCss}`);
     }
 
     generatePreview();

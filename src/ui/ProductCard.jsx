@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import { formatLink } from "../utils/helpers";
 
-function ProductCard({ name, price, img }) {
+function ProductCard({ name, price, img, location }) {
   return (
-    <Link to={formatLink(name)}>
+    <Link
+      to={
+        location === "home" ? "products/" + formatLink(name) : formatLink(name)
+      }
+    >
+      {console.log(name, formatLink(name))}
       <div className="cursor-pointer hover:scale-105 duration-100">
         <img src={img} alt="" className="h-80" />
         <div className="py-2">
