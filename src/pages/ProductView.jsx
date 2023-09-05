@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import { getProducts } from "../services/apiShop";
 import { formatCurrency, getCustomColorCss } from "../utils/helpers";
-import ColorBlock from "../features/products/ColorBlock";
+import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
-import { useEffect, useRef, useState } from "react";
+import ColorBlock from "../features/products/ColorBlock";
 import SideImageThumbnail from "../features/products/SideImageThumbnail";
 
 function ProductView() {
@@ -185,13 +185,23 @@ function ProductView() {
           <div className={customStyle}>{customText}</div>
         </div>
 
-        <div className="flex space-x-2 mt-10">
+        <div className="flex space-x-2 my-10 pb-5 border-b border-lightBrown">
           <button className="text-white bg-mediumBrown px-10 py-2 rounded-md tracking-widest duration-150 md:w-[70%] w-[90%] ">
             add to cart
           </button>
           <button className="text-white bg-mediumBrown px-5 py-2 rounded-md tracking-widest duration-150">
             <FiHeart />
           </button>
+        </div>
+        <div className="space-y-1">
+          <h2 className="uppercase text-lg font-semibold text-darkBrown">
+            Product Specifications
+          </h2>
+          <ul>
+            {description.map((desc, key) => (
+              <li key={key}>- {desc}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
