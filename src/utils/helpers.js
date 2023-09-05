@@ -29,14 +29,20 @@ export function getColorBlockCss(color) {
       return "bg-blue";
     case "Pink":
       return "bg-pink";
+    case "Flamingo Pink":
+      return "bg-pink";
     case "Red":
       return "bg-red";
     case "Silver":
+      return "bg-silver";
+    case "Dark Silver":
       return "bg-silver";
     case "Gold":
       return "bg-gold";
     case "Tiffany Blue":
       return "bg-tiffanyBlue";
+    case "Light Blue":
+      return "bg-blue";
     case "Dark Pink":
       return "bg-darkPink";
     case "Blush":

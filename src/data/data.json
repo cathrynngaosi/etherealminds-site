@@ -32,10 +32,9 @@
       "price": 380,
       "images": [
         "/src/data/images/double-walled-mugs/cover.JPG",
-        "/src/data/images/double-walled-mugs/1.JPG",
+        "/src/data/images/double-walled-mugs/4.JPG",
         "/src/data/images/double-walled-mugs/2.JPG",
-        "/src/data/images/double-walled-mugs/3.JPG",
-        "/src/data/images/double-walled-mugs/4.JPG"
+        "/src/data/images/double-walled-mugs/3.JPG"
       ]
     },
     {
@@ -179,7 +178,6 @@
         "/src/data/images/macaron-mugs/1.JPG",
         "/src/data/images/macaron-mugs/2.JPG",
         "/src/data/images/macaron-mugs/3.JPG",
-        "/src/data/images/macaron-mugs/4.JPG",
         "/src/data/images/macaron-mugs/5.JPG"
       ]
     },
@@ -194,9 +192,7 @@
         "/src/data/images/milk-carton-tumblers/cover.JPG",
         "/src/data/images/milk-carton-tumblers/1.JPG",
         "/src/data/images/milk-carton-tumblers/2.JPG",
-        "/src/data/images/milk-carton-tumblers/3.JPG",
-        "/src/data/images/milk-carton-tumblers/4.JPG",
-        "/src/data/images/milk-carton-tumblers/5.JPG"
+        "/src/data/images/milk-carton-tumblers/3.JPG"
       ]
     },
     {
@@ -206,14 +202,10 @@
       "colors": [
         "Flamingo Pink",
         "Old Rose",
-        "Lavender",
         "Red",
-        "Dark Teal",
         "Light Blue",
         "Black",
-        "Bronze",
         "Silver",
-        "Champagne",
         "Gold"
       ],
       "description": ["Made of leather"],
@@ -221,8 +213,7 @@
       "images": [
         "/src/data/images/passport-covers/cover.JPG",
         "/src/data/images/passport-covers/1.JPG",
-        "/src/data/images/passport-covers/2.JPG",
-        "/src/data/images/passport-covers/3.JPG"
+        "/src/data/images/passport-covers/2.JPG"
       ]
     },
     {
@@ -285,7 +276,6 @@
       "price": 250,
       "images": [
         "/src/data/images/wine-glass/cover.JPG",
-        "/src/data/images/wine-glass/1.JPG",
         "/src/data/images/wine-glass/2.JPG"
       ]
     }

@@ -4,7 +4,7 @@ import { formatCurrency, getCustomColorCss } from "../utils/helpers";
 import ColorBlock from "../features/products/ColorBlock";
 import { FiHeart } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import ImagePreview from "../features/products/ImagePreview";
+import SideImageThumbnail from "../features/products/SideImageThumbnail";
 
 function ProductView() {
   const productDetails = useLoaderData();
@@ -18,7 +18,9 @@ function ProductView() {
   const [customFontDisplay, setCustomFontDisplay] = useState("Anton");
   const [customColorCss, setCustomColorCss] = useState("black");
   const [customColorDisplay, setCustomColorDisplay] = useState("Black");
+
   const [productColor, setProductColor] = useState(colors[0]);
+  const [displayPhoto, setDisplayPhoto] = useState(images[0]);
 
   useEffect(() => {
     async function generatePreview() {
@@ -44,16 +46,24 @@ function ProductView() {
     setCustomFontDisplay(font.replace("font-", ""));
   }
 
+  function handleClickSidePhoto(img) {
+    setDisplayPhoto(img);
+  }
+
   return (
     <section className="flex py-10 md:px-14 px-10 space-y-4 md:space-y-0 md:space-x-4 flex-col md:flex-row">
       <div className="md:w-2/4 flex md:space-x-4 flex-col-reverse md:flex-row">
         <div className="md:space-y-2 space-x-1.5 md:space-x-0 flex md:flex-col mt-4 md:mt-0">
           {images.map((img) => (
-            <ImagePreview img={img} key={img} />
+            <SideImageThumbnail
+              img={img}
+              key={img}
+              handleClick={() => handleClickSidePhoto(img)}
+            />
           ))}
         </div>
         <div className="">
-          <img src={images[0]} alt="" className="md:h-[35rem] w-full" />
+          <img src={displayPhoto} alt="" className="md:h-[35rem] w-full" />
         </div>
       </div>
 
