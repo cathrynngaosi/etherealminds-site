@@ -33,11 +33,6 @@ const router = createBrowserRouter([
         element: <ProductView />,
         loader: productLoader,
       },
-      {
-        path: "/collections/:list",
-        element: <ProductList />,
-        loader: listLoader,
-      },
     ],
   },
 ]);

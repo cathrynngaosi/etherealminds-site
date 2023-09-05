@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { formatLink } from "../utils/helpers";
 
 function CollectionsMiniPreview({ name, img }) {
   return (
-    <Link to={"collections/" + name}>
+    <Link to={"shop/" + formatLink(name)}>
       <div className="space-y-4 hover:cursor-pointer hover:scale-105">
         <img src={img} alt="" className="h-40 rounded-full" />
         <h2 className="text-center tracking-wider text-darkBrown">{name}</h2>
