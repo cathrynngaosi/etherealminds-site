@@ -39,8 +39,12 @@ export function getColorBlockCss(color) {
       return "bg-silver";
     case "Gold":
       return "bg-gold";
+    case "Mint Green":
+      return "bg-mintGreen";
     case "Tiffany Blue":
       return "bg-tiffanyBlue";
+    case "Yellow":
+      return "bg-yellow";
     case "Light Blue":
       return "bg-blue";
     case "Dark Pink":
