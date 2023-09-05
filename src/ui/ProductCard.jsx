@@ -8,7 +8,7 @@ function ProductCard({ name, price, img }) {
         <img src={img} alt="" className="h-80" />
         <div className="py-2">
           <h2>{name}</h2>
-          <p>₱{price}.00</p>
+          <p className="font-price tracking-wider">₱{price}.00</p>
         </div>
       </div>
     </Link>
