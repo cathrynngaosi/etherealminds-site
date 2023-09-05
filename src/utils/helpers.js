@@ -13,7 +13,7 @@ export function formatCurrency(value) {
   }).format(value);
 }
 
-export function getColorBlock(color) {
+export function getColorBlockCss(color) {
   switch (color) {
     case "Black":
       return "bg-black";
@@ -45,5 +45,20 @@ export function getColorBlock(color) {
       return "bg-wine";
     case "Old Rose":
       return "bg-oldRose";
+  }
+}
+
+export function getCustomColorCss(color) {
+  switch (color) {
+    case "Black":
+      return "text-black";
+    case "White":
+      return "text-white bg-lightBrown";
+    case "Rosegold":
+      return "text-rosegold";
+    case "Gold":
+      return "text-gold";
+    case "Holo":
+      return "bg-gradient-to-b from-cyan-400 to-rose-400 text-transparent bg-clip-text";
   }
 }
