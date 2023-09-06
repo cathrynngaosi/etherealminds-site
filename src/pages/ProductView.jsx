@@ -82,6 +82,12 @@ function ProductView() {
 
       dispatch(addToCart(newItem));
       setShowCartNotif((show) => !show);
+
+      setCustomText("");
+      setCustomFontCss("font-anton");
+      setCustomFontDisplay("Anton");
+      setCustomColorCss("black");
+      setCustomColorDisplay("Black");
     } else {
       setShowRequired("block");
     }
