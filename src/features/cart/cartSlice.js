@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cart: [],
+  showRequired: "hidden",
+  showCartNotif: false,
 };
 
 const cartSlice = createSlice({
@@ -9,16 +11,27 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      state.cart.push(action.payload);
+      if (action.payload !== "") {
+        state.showRequired = "hidden";
+        state.showCartNotif = true;
+        state.cart.push(action.payload);
+      } else {
+        state.showRequired = "block";
+      }
     },
     deleteFromCart(state, action) {
       console.log(action, state);
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
+    closeCartNotif(state, action) {
+      state.showCartNotif = action.payload;
+    },
   },
 });
 
 export const getCart = (state) => state.cart.cart;
+export const getShowRequired = (state) => state.cart.showRequired;
+export const getShowCartNotif = (state) => state.cart.showCartNotif;
 
 export const getTotalCartQuantity = (state) =>
   state.cart.cart.reduce((sum, item) => sum + item.qty, 0);
@@ -26,6 +39,6 @@ export const getTotalCartQuantity = (state) =>
 export const getTotalCartPrice = (state) =>
   state.cart.cart.reduce((sum, item) => sum + item.price, 0);
 
-export const { addToCart, deleteFromCart } = cartSlice.actions;
+export const { addToCart, deleteFromCart, closeCartNotif } = cartSlice.actions;
 
 export default cartSlice.reducer;

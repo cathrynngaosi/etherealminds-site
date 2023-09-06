@@ -24,12 +24,13 @@ const customTextSlice = createSlice({
       state.customFontCss = action.payload;
       state.customFontDisplay = action.payload.replace("font-", "");
     },
+    reset: () => initialState,
   },
 });
 
 export const getCustomStyles = (state) => state.customText;
 
-export const { updateCustomText, updateCustomColor, updateCustomFont } =
+export const { updateCustomText, updateCustomColor, updateCustomFont, reset } =
   customTextSlice.actions;
 
 export default customTextSlice.reducer;

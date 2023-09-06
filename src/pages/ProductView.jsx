@@ -9,13 +9,16 @@ import FontOptions from "../features/product/FontOptions";
 import SideImageThumbnail from "../features/product/SideImageThumbnail";
 import DecalColorOptions from "../features/product/DecalColorOptions";
 import ProductSpecs from "../features/product/ProductSpecs";
-
+import {
+  addToCart,
+  getShowCartNotif,
+  getShowRequired,
+} from "../features/cart/cartSlice";
 import AddItemNotif from "../features/cart/AddItemNotif";
 import {
   getCustomStyles,
   updateCustomText,
 } from "../features/product/customTextSlice";
-import { addToCart } from "../features/cart/cartSlice";
 
 function ProductView() {
   const dispatch = useDispatch();
@@ -34,7 +37,8 @@ function ProductView() {
   const [customStyle, setCustomStyle] = useState(
     "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default",
   );
-  const [showRequired, setShowRequired] = useState("hidden");
+  const showRequired = useSelector(getShowRequired);
+  const showCartNotif = useSelector(getShowCartNotif);
 
   const [productColor, setProductColor] = useState(colors[0]);
   const [displayPhoto, setDisplayPhoto] = useState(images[0]);
@@ -75,26 +79,9 @@ function ProductView() {
     setDisplayPhoto(img);
   }
 
-  function handleAddToCart() {
-    if (customText !== "") {
-      setShowRequired("hidden");
-
-      dispatch(addToCart(newItem));
-      setShowCartNotif((show) => !show);
-    } else {
-      setShowRequired("block");
-    }
-  }
-
   return (
     <section>
-      <AddItemNotif
-        item={newItem}
-        shown={showCartNotif}
-        close={() => {
-          setShowCartNotif(false);
-        }}
-      />
+      <AddItemNotif item={newItem} shown={showCartNotif} />
       <div className="flex flex-col space-y-4 px-10 py-10 md:flex-row md:space-x-4 md:space-y-0 md:px-14">
         <div className="flex flex-col-reverse md:w-2/4 md:flex-row md:space-x-4">
           <div className="mt-4 flex space-x-1.5 md:mt-0 md:flex-col md:space-x-0 md:space-y-2">
@@ -170,7 +157,7 @@ function ProductView() {
           <div className="my-10 flex space-x-2 border-b border-lightBrown pb-5">
             <button
               className="w-[90%] rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 md:w-[70%]"
-              onClick={handleAddToCart}
+              onClick={() => dispatch(addToCart(newItem))}
             >
               add to cart
             </button>

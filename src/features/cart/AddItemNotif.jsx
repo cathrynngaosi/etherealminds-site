@@ -1,9 +1,12 @@
 import { BiCheckCircle } from "react-icons/bi";
 import { MdOutlineClose } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { formatCurrency } from "../../utils/helpers";
+import { useDispatch } from "react-redux";
+import { closeCartNotif } from "./cartSlice";
+import { reset } from "../product/customTextSlice";
 
-function AddItemNotif({ shown, close, item }) {
+function AddItemNotif({ shown, item }) {
+  const dispatch = useDispatch();
   const {
     name,
     price,
@@ -14,12 +17,13 @@ function AddItemNotif({ shown, close, item }) {
     customFontDisplay,
   } = item;
 
+  function close() {
+    dispatch(reset());
+    dispatch(closeCartNotif(false));
+  }
+
   return shown ? (
-    <div
-      onClick={() => {
-        close();
-      }}
-    >
+    <div onClick={close}>
       <div className="absolute inset-0 flex h-screen items-center justify-center bg-darkBrown/30"></div>
       <div
         className="relative"
@@ -32,7 +36,7 @@ function AddItemNotif({ shown, close, item }) {
             <h2 className="flex items-center font-bold lowercase text-darkBrown">
               <BiCheckCircle className="mr-1" /> Added to cart
             </h2>
-            <MdOutlineClose onClick={close} />
+            <MdOutlineClose onClick={close} className="cursor-pointer" />
           </div>
           <div className="flex space-x-2">
             <div>
