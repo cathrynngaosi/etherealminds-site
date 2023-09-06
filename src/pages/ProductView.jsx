@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { getProducts } from "../services/apiShop";
 import { formatCurrency, getCustomColorCss } from "../utils/helpers";
 import { useEffect, useState } from "react";
@@ -8,14 +9,18 @@ import FontOptions from "../features/product/FontOptions";
 import SideImageThumbnail from "../features/product/SideImageThumbnail";
 import DecalColorOptions from "../features/product/DecalColorOptions";
 import ProductSpecs from "../features/product/ProductSpecs";
+import { addToCart } from "../features/cart/cartSlice";
 
 function ProductView() {
+  const dispatch = useDispatch();
+
   const productDetails = useLoaderData();
   const { name, price, images, colors, description } = productDetails[0];
 
   const [customStyle, setCustomStyle] = useState(
     "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default",
   );
+  const [showRequired, setShowRequired] = useState("hidden");
   const [customText, setCustomText] = useState("");
   const [customFontCss, setCustomFontCss] = useState("font-anton");
   const [customFontDisplay, setCustomFontDisplay] = useState("Anton");
@@ -55,6 +60,27 @@ function ProductView() {
 
   function handleClickSidePhoto(img) {
     setDisplayPhoto(img);
+  }
+
+  function handleAddToCart() {
+    if (customText !== "") {
+      setShowRequired("hidden");
+
+      const newItem = {
+        name,
+        price,
+        qty: 1,
+        thumbnail: images[0],
+        productColor,
+        customText,
+        customColorDisplay,
+        customFontDisplay,
+      };
+
+      dispatch(addToCart(newItem));
+    } else {
+      setShowRequired("block");
+    }
   }
 
   return (
@@ -114,6 +140,9 @@ function ProductView() {
             onChange={(e) => setCustomText(e.target.value)}
             className="w-full rounded border border-lightBrown px-2 py-1 focus:outline-none md:w-[80%]"
           />
+          <span className={`mt-2 text-sm text-mediumBrown ${showRequired}`}>
+            Required!
+          </span>
         </div>
         <div className="flex flex-col space-y-4 md:flex-row md:space-y-0">
           <FontOptions
@@ -136,7 +165,10 @@ function ProductView() {
         </div>
 
         <div className="my-10 flex space-x-2 border-b border-lightBrown pb-5">
-          <button className="w-[90%] rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 md:w-[70%] ">
+          <button
+            className="w-[90%] rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 md:w-[70%]"
+            onClick={handleAddToCart}
+          >
             add to cart
           </button>
           <button className="rounded-md bg-mediumBrown px-5 py-2 tracking-widest text-white duration-150">
