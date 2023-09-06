@@ -13,6 +13,11 @@ export function formatCurrency(value) {
   }).format(value);
 }
 
+export function generateUniqueItemID() {
+  const id = `item-${Math.floor(Math.random() * Date.now())}`;
+  return id;
+}
+
 export function getColorBlockCss(color) {
   switch (color) {
     case "Black":

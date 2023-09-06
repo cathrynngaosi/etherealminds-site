@@ -11,6 +11,10 @@ const cartSlice = createSlice({
     addToCart(state, action) {
       state.cart.push(action.payload);
     },
+    deleteFromCart(state, action) {
+      console.log(action, state);
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+    },
   },
 });
 
@@ -22,6 +26,6 @@ export const getTotalCartQuantity = (state) =>
 export const getTotalCartPrice = (state) =>
   state.cart.cart.reduce((sum, item) => sum + item.price, 0);
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, deleteFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

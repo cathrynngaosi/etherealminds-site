@@ -1,7 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getProducts } from "../services/apiShop";
-import { formatCurrency, getCustomColorCss } from "../utils/helpers";
+import {
+  formatCurrency,
+  generateUniqueItemID,
+  getCustomColorCss,
+} from "../utils/helpers";
 import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
 import ColorBlock from "../features/product/ColorBlock";
@@ -33,7 +37,10 @@ function ProductView() {
 
   const [showCartNotif, setShowCartNotif] = useState(false);
 
+  const itemID = generateUniqueItemID();
+
   const newItem = {
+    id: itemID,
     name,
     price,
     qty: 1,

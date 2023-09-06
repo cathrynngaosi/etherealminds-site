@@ -4,6 +4,7 @@ import UpdateItemQty from "./UpdateItemQty";
 
 function CartItem({ item }) {
   const {
+    id,
     name,
     price,
     qty,
@@ -14,7 +15,6 @@ function CartItem({ item }) {
     customFontDisplay,
   } = item;
 
-  console.log(item);
   return (
     <div className="flex rounded bg-seashellNude p-3 text-darkBrown">
       <div className="flex w-3/5 space-x-2">
@@ -36,7 +36,7 @@ function CartItem({ item }) {
         <p className="font-price">{formatCurrency(price)}</p>
       </div>
 
-      <DeleteItem />
+      <DeleteItem id={id} />
     </div>
   );
 }

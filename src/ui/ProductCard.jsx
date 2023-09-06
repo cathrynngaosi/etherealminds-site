@@ -8,8 +8,7 @@ function ProductCard({ name, price, img, location }) {
         location === "home" ? "products/" + formatLink(name) : formatLink(name)
       }
     >
-      {console.log(name, formatLink(name))}
-      <div className="cursor-pointer hover:scale-105 duration-100">
+      <div className="cursor-pointer duration-100 hover:scale-105">
         <img src={img} alt="" className="h-80" />
         <div className="py-2">
           <h2>{name}</h2>
