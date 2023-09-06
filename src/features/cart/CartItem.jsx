@@ -1,24 +1,39 @@
+import { formatCurrency } from "../../utils/helpers";
 import DeleteItem from "./DeleteItem";
 import UpdateItemQty from "./UpdateItemQty";
 
-function CartItem() {
+function CartItem({ item }) {
+  const {
+    name,
+    price,
+    qty,
+    thumbnail,
+    productColor,
+    customText,
+    customColorDisplay,
+    customFontDisplay,
+  } = item;
+
+  console.log(item);
   return (
     <div className="flex rounded bg-seashellNude p-3 text-darkBrown">
       <div className="flex w-3/5 space-x-2">
         <div>
-          <img src="src/data/images/cover-1.JPG" alt="" className="h-16" />
+          <img src={thumbnail} alt="" className="h-16" />
         </div>
         <div>
-          <p className="font-medium">Product Name</p>
-          <p className="text-sm font-light">Color</p>
-          <p className="text-sm font-light">Text, Font, Decal Color</p>
+          <p className="font-medium">{name}</p>
+          <p className="text-sm font-light">{productColor}</p>
+          <p className="text-sm font-light">
+            {customText}, {customFontDisplay}, {customColorDisplay}
+          </p>
         </div>
       </div>
 
       <UpdateItemQty />
 
       <div className="m-auto w-1/5 text-center">
-        <p>$</p>
+        <p className="font-price">{formatCurrency(price)}</p>
       </div>
 
       <DeleteItem />
