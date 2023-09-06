@@ -1,11 +1,7 @@
 import { useLoaderData } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../services/apiShop";
-import {
-  formatCurrency,
-  generateUniqueItemID,
-  getCustomColorCss,
-} from "../utils/helpers";
+import { formatCurrency, generateUniqueItemID } from "../utils/helpers";
 import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
 import ColorBlock from "../features/product/ColorBlock";
@@ -13,11 +9,24 @@ import FontOptions from "../features/product/FontOptions";
 import SideImageThumbnail from "../features/product/SideImageThumbnail";
 import DecalColorOptions from "../features/product/DecalColorOptions";
 import ProductSpecs from "../features/product/ProductSpecs";
-import { addToCart } from "../features/cart/cartSlice";
+
 import AddItemNotif from "../features/cart/AddItemNotif";
+import {
+  getCustomStyles,
+  updateCustomText,
+} from "../features/product/customTextSlice";
+import { addToCart } from "../features/cart/cartSlice";
 
 function ProductView() {
   const dispatch = useDispatch();
+
+  const {
+    customText,
+    customFontCss,
+    customFontDisplay,
+    customColorCss,
+    customColorDisplay,
+  } = useSelector(getCustomStyles);
 
   const productDetails = useLoaderData();
   const { name, price, images, colors, description } = productDetails[0];
@@ -26,16 +35,9 @@ function ProductView() {
     "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default",
   );
   const [showRequired, setShowRequired] = useState("hidden");
-  const [customText, setCustomText] = useState("");
-  const [customFontCss, setCustomFontCss] = useState("font-anton");
-  const [customFontDisplay, setCustomFontDisplay] = useState("Anton");
-  const [customColorCss, setCustomColorCss] = useState("black");
-  const [customColorDisplay, setCustomColorDisplay] = useState("Black");
 
   const [productColor, setProductColor] = useState(colors[0]);
   const [displayPhoto, setDisplayPhoto] = useState(images[0]);
-
-  const [showCartNotif, setShowCartNotif] = useState(false);
 
   const itemID = generateUniqueItemID();
 
@@ -67,16 +69,6 @@ function ProductView() {
 
   function handleClickProdColor(color) {
     setProductColor(color);
-  }
-
-  function handleClickCustomColor(color) {
-    setCustomColorCss(getCustomColorCss(color));
-    setCustomColorDisplay(color);
-  }
-
-  function handleClickCustomFont(font) {
-    setCustomFontCss(font);
-    setCustomFontDisplay(font.replace("font-", ""));
   }
 
   function handleClickSidePhoto(img) {
@@ -156,7 +148,7 @@ function ProductView() {
             <input
               type="text"
               value={customText}
-              onChange={(e) => setCustomText(e.target.value)}
+              onChange={(e) => dispatch(updateCustomText(e.target.value))}
               className="w-full rounded border border-lightBrown px-2 py-1 focus:outline-none md:w-[80%]"
             />
             <span className={`mt-2 text-sm text-mediumBrown ${showRequired}`}>
@@ -164,16 +156,8 @@ function ProductView() {
             </span>
           </div>
           <div className="flex flex-col space-y-4 md:flex-row md:space-y-0">
-            <FontOptions
-              customFontDisplay={customFontDisplay}
-              customFontCss={customFontCss}
-              handleClickCustomFont={handleClickCustomFont}
-            />
-
-            <DecalColorOptions
-              customColorDisplay={customColorDisplay}
-              handleClickCustomColor={handleClickCustomColor}
-            />
+            <FontOptions />
+            <DecalColorOptions />
           </div>
 
           <div>

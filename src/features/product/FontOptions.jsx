@@ -1,8 +1,10 @@
-function FontOptions({
-  customFontDisplay,
-  customFontCss,
-  handleClickCustomFont,
-}) {
+import { useDispatch, useSelector } from "react-redux";
+import { getCustomStyles, updateCustomFont } from "./customTextSlice";
+
+function FontOptions() {
+  const dispatch = useDispatch();
+  const { customFontCss, customFontDisplay } = useSelector(getCustomStyles);
+
   return (
     <div className="w-1/2 space-y-1">
       <div className="flex items-center space-x-1 text-darkBrown">
@@ -17,7 +19,7 @@ function FontOptions({
               ? "text-md font-box-selected font-anton"
               : "text-md font-box font-anton"
           }
-          onClick={() => handleClickCustomFont("font-anton")}
+          onClick={() => dispatch(updateCustomFont("font-anton"))}
         >
           <span>Anton</span>
         </div>
@@ -27,7 +29,7 @@ function FontOptions({
               ? "font-box-selected font-cookie text-xl"
               : "font-box font-cookie text-xl"
           }
-          onClick={() => handleClickCustomFont("font-cookie")}
+          onClick={() => dispatch(updateCustomFont("font-cookie"))}
         >
           <span> Cookie</span>
         </div>
@@ -37,7 +39,7 @@ function FontOptions({
               ? "font-box-selected font-tenali text-xl"
               : "font-box font-tenali text-xl"
           }
-          onClick={() => handleClickCustomFont("font-tenali")}
+          onClick={() => dispatch(updateCustomFont("font-tenali"))}
         >
           <span className="mt-[5px]"> Tenali</span>
         </div>
@@ -47,7 +49,7 @@ function FontOptions({
               ? "font-box-selected font-pacifico text-sm"
               : "font-box font-pacifico text-sm"
           }
-          onClick={() => handleClickCustomFont("font-pacifico")}
+          onClick={() => dispatch(updateCustomFont("font-pacifico"))}
         >
           <span> Pacifico</span>
         </div>
