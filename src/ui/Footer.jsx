@@ -4,7 +4,7 @@ import { AiOutlineFacebook } from "react-icons/ai";
 
 function Footer() {
   return (
-    <footer className="flex bg-seashellPink py-6 items-center justify-between px-6">
+    <footer className="relative bottom-0 z-50 flex items-center justify-between bg-seashellPink px-6 py-6">
       <div>
         <img src="../../public/EMLogo.svg" alt="" className="h-14" />
       </div>
@@ -22,9 +22,9 @@ function Footer() {
       </div>
       <div className="pr-10">
         <p>follow us</p>
-        <div className="flex items-center space-x-1 justify-center">
-          <BsInstagram className="text-xl cursor-pointer" />
-          <AiOutlineFacebook className="text-2xl cursor-pointer" />
+        <div className="flex items-center justify-center space-x-1">
+          <BsInstagram className="cursor-pointer text-xl" />
+          <AiOutlineFacebook className="cursor-pointer text-2xl" />
         </div>
       </div>
     </footer>

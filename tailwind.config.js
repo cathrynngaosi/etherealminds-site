@@ -14,6 +14,7 @@ export default {
       colors: {
         seashellPink: "#F4E7E1",
         seashellNude: "#F6EDE9",
+        seaSalt: "#fbfaf9",
         darkBrown: "#623C29",
         mediumBrown: "#966147",
         lightBrown: "#C7AC9E",
