@@ -24,14 +24,14 @@ function AddItemNotif({ shown, item }) {
 
   return shown ? (
     <div onClick={close}>
-      <div className="absolute inset-0 flex h-screen items-center justify-center bg-darkBrown/30"></div>
+      <div className="fixed inset-0 flex h-full w-full items-center justify-center bg-darkBrown/30"></div>
       <div
         className="relative"
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
-        <div className="absolute right-3 top-3 z-30 w-1/5 space-y-4 rounded bg-seashellPink p-5 pt-3 text-darkBrown">
+        <div className="absolute top-1 z-30 w-full space-y-4 rounded bg-seashellPink p-5 pt-3 text-darkBrown md:right-1 md:w-1/5">
           <div className="flex items-center justify-between">
             <h2 className="flex items-center font-bold lowercase text-darkBrown">
               <BiCheckCircle className="mr-1" /> Added to cart
@@ -55,7 +55,7 @@ function AddItemNotif({ shown, item }) {
           <div className="flex space-x-2">
             <Link
               to="/cart"
-              className="bg-seaSalt w-full rounded-md border border-lightBrown px-5 py-2 text-center text-xs tracking-widest text-darkBrown duration-150"
+              className="w-full rounded-md border border-lightBrown bg-seaSalt px-5 py-2 text-center text-xs tracking-widest text-darkBrown duration-150"
             >
               view cart (1)
             </Link>
