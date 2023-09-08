@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function JoinTheClub() {
   return (
-    <section className="bg-seashellNude">
+    <div className="bg-seashellNude">
       <div className="m-auto w-4/5 p-14 text-center">
         <h1>join the club and get 10% off your first order!</h1>
         <p className="leading-relaxed">
@@ -17,7 +17,7 @@ function JoinTheClub() {
           <Button type="join">join</Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

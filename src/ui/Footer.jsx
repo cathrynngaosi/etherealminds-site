@@ -4,7 +4,7 @@ import { AiOutlineFacebook } from "react-icons/ai";
 
 function Footer() {
   return (
-    <footer className="relative bottom-0 z-50 flex items-center justify-between bg-seashellPink px-6 py-6">
+    <footer className="mt-auto flex items-center justify-between bg-seashellPink px-6 py-6">
       <div>
         <img src="../../public/EMLogo.svg" alt="" className="h-14" />
       </div>
