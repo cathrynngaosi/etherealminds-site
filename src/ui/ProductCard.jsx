@@ -5,7 +5,9 @@ function ProductCard({ name, price, img, location }) {
   return (
     <Link
       to={
-        location === "home" ? "products/" + formatLink(name) : formatLink(name)
+        location === "home" || location === "favorites"
+          ? "/products/" + formatLink(name)
+          : formatLink(name)
       }
     >
       <div className="cursor-pointer duration-100 hover:scale-105">
