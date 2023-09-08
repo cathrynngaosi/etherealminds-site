@@ -8,6 +8,8 @@ import {
 import { FaHeart } from "react-icons/fa";
 import { FiHeart } from "react-icons/fi";
 
+import Button from "../../ui/Button";
+
 function FavoriteBtn({ id }) {
   const dispatch = useDispatch();
   const favorites = useSelector(getFavorites);
@@ -16,8 +18,8 @@ function FavoriteBtn({ id }) {
   return (
     <>
       {isFavorite ? (
-        <button
-          className="rounded-md bg-mediumBrown px-5 py-2 tracking-widest text-white duration-150"
+        <Button
+          type="fave"
           onClick={() =>
             dispatch(
               deleteFromFavorites(id),
@@ -26,10 +28,10 @@ function FavoriteBtn({ id }) {
           }
         >
           <FaHeart />
-        </button>
+        </Button>
       ) : (
-        <button
-          className="rounded-md bg-mediumBrown px-5 py-2 tracking-widest text-white duration-150"
+        <Button
+          type="fave"
           onClick={() =>
             dispatch(
               addToFavorites(id),
@@ -38,7 +40,7 @@ function FavoriteBtn({ id }) {
           }
         >
           <FiHeart />
-        </button>
+        </Button>
       )}
     </>
   );

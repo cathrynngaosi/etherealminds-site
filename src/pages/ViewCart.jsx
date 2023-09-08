@@ -23,15 +23,13 @@ function ViewCart() {
           </div>
         </div>
       ) : (
-        <div className="text-coffee text-center">
+        <div className="text-center text-coffee">
           <div className="py-14">
             <BsCartX className="mx-auto -rotate-12 text-[5rem]" />
             <h1 className="m-5">
               Your cart is currently empty, let&#39;s change that!
             </h1>
-            <Link to="/shop">
-              <Button> continue shopping </Button>
-            </Link>
+            <Button to="/shop"> continue shopping </Button>
           </div>
         </div>
       )}

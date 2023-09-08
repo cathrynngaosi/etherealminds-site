@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { formatCurrency } from "../../utils/helpers";
 import { getTotalCartPrice, getTotalCartQuantity } from "./cartSlice";
 
+import Button from "../../ui/Button";
+
 function OrderSummary() {
   const shippingFee = 100;
   const cartTotalQty = useSelector(getTotalCartQuantity);
@@ -35,9 +37,7 @@ function OrderSummary() {
         </span>
       </div>
 
-      <button className="w-full rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150">
-        checkout
-      </button>
+      <Button type="full">checkout</Button>
     </div>
   );
 }

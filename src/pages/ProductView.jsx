@@ -70,7 +70,7 @@ function ProductView() {
           <Preview />
 
           <div className="my-10 flex space-x-2 border-b border-lightBrown pb-5">
-            <Button type="cart" onClick={() => dispatch(addToCart(newItem))}>
+            <Button type="90" onClick={() => dispatch(addToCart(newItem))}>
               add to cart
             </Button>
             <FavoriteBtn id={id} />

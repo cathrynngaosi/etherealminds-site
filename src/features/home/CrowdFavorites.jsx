@@ -33,9 +33,7 @@ function CrowdFavorites() {
       </div>
 
       <div className="mx-auto mt-4 text-center">
-        <Link to="/shop/shop-all">
-          <Button> shop all</Button>
-        </Link>
+        <Button to="/shop/shop-all">shop all</Button>
       </div>
     </section>
   );
