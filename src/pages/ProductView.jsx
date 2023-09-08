@@ -4,6 +4,7 @@ import { getProducts } from "../services/apiShop";
 import { formatCurrency, generateUniqueItemID } from "../utils/helpers";
 import { useEffect, useState } from "react";
 import { FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import ColorBlock from "../features/product/ColorBlock";
 import FontOptions from "../features/product/FontOptions";
 import SideImageThumbnail from "../features/product/SideImageThumbnail";
@@ -19,6 +20,7 @@ import {
   getCustomStyles,
   updateCustomText,
 } from "../features/product/customTextSlice";
+import FavoriteBtn from "../features/product/FavoriteBtn";
 
 function ProductView() {
   const dispatch = useDispatch();
@@ -32,7 +34,7 @@ function ProductView() {
   } = useSelector(getCustomStyles);
 
   const productDetails = useLoaderData();
-  const { name, price, images, colors, description } = productDetails[0];
+  const { id, name, price, images, colors, description } = productDetails[0];
 
   const [customStyle, setCustomStyle] = useState(
     "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default",
@@ -42,7 +44,6 @@ function ProductView() {
 
   const [productColor, setProductColor] = useState(colors[0]);
   const [displayPhoto, setDisplayPhoto] = useState(images[0]);
-
   const itemID = generateUniqueItemID();
 
   const newItem = {
@@ -161,9 +162,8 @@ function ProductView() {
             >
               add to cart
             </button>
-            <button className="rounded-md bg-mediumBrown px-5 py-2 tracking-widest text-white duration-150">
-              <FiHeart />
-            </button>
+
+            <FavoriteBtn id={id} />
           </div>
 
           <ProductSpecs description={description} />
