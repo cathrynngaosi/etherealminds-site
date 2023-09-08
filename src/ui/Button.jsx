@@ -9,6 +9,7 @@ function Button({ children, type, onClick, to }) {
     90: base + "w-[90%] md:w-[70%]",
     fave: "rounded-md bg-mediumBrown px-5 py-2 tracking-widest text-white",
     join: "bg-mediumBrown text-white px-6 py-1.5 text-sm rounded absolute right-2 top-[20px] font-medium",
+    wide: "rounded-md bg-mediumBrown px-20 py-2 tracking-widest text-white ",
   };
 
   if (onClick) {

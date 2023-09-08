@@ -1,9 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AppLayout from "./ui/AppLayout";
-import Home from "./pages/Home";
 import Shop, { loader as collectionsLoader } from "./pages/Shop";
 import ProductList, { loader as listLoader } from "./features/shop/ProductList";
 import ProductView, { loader as productLoader } from "./pages/ProductView";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import AppLayout from "./ui/AppLayout";
 import ViewCart from "./pages/ViewCart";
 import Favorites from "./pages/Favorites";
 
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "/favorites",
         element: <Favorites />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
     ],
   },

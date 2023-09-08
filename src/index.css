@@ -6,6 +6,10 @@
   @apply text-2xl hover:cursor-pointer;
 }
 
+.input-icon {
+  @apply absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 transform text-sm text-lightBrown;
+}
+
 h1 {
   @apply text-2xl font-semibold leading-10;
 }
