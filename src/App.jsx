@@ -5,6 +5,7 @@ import Shop, { loader as collectionsLoader } from "./pages/Shop";
 import ProductList, { loader as listLoader } from "./features/shop/ProductList";
 import ProductView, { loader as productLoader } from "./pages/ProductView";
 import ViewCart from "./pages/ViewCart";
+import Favorites from "./pages/Favorites";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <ViewCart />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
       },
     ],
   },

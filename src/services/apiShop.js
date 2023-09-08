@@ -14,10 +14,20 @@ export async function getAllCollections() {
 
 export async function getProducts(query) {
   const res = await fetch(
-    `${API_URL}/products?q=${query === "shop-all" ? "" : formatTitle(query)}`
+    `${API_URL}/products?q=${query === "shop-all" ? "" : formatTitle(query)}`,
   );
 
   if (!res.ok) throw Error("Failed getting products");
+
+  const data = await res.json();
+
+  return data;
+}
+
+export async function getFavoritesList(query) {
+  const res = await fetch(`${API_URL}/products?${query}`);
+
+  if (!res.ok) throw Error("Failed getting favorites");
 
   const data = await res.json();
 
