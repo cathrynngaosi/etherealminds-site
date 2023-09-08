@@ -1,6 +1,17 @@
-function Button({ children }) {
+function Button({ children, type, onClick }) {
+  if (type === "cart") {
+    return (
+      <button
+        className="w-[90%] rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 md:w-[70%]"
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  }
+
   return (
-    <button className="text-white bg-mediumBrown px-10 py-2 rounded-md tracking-widest hover:scale-105 duration-150 ">
+    <button className="rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 hover:scale-105 ">
       {children}
     </button>
   );

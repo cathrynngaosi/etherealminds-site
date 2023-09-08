@@ -1,50 +1,34 @@
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import { getProducts } from "../services/apiShop";
-import { formatCurrency, generateUniqueItemID } from "../utils/helpers";
-import { useEffect, useState } from "react";
-import { FiHeart } from "react-icons/fi";
-import { FaHeart } from "react-icons/fa";
-import ColorBlock from "../features/product/ColorBlock";
-import FontOptions from "../features/product/FontOptions";
-import SideImageThumbnail from "../features/product/SideImageThumbnail";
-import DecalColorOptions from "../features/product/DecalColorOptions";
-import ProductSpecs from "../features/product/ProductSpecs";
-import {
-  addToCart,
-  getShowCartNotif,
-  getShowRequired,
-} from "../features/cart/cartSlice";
+import { generateUniqueItemID } from "../utils/helpers";
+import { getCustomStyles } from "../features/product/customTextSlice";
+import { addToCart, getShowCartNotif } from "../features/cart/cartSlice";
+
+import Button from "../ui/Button";
+import Preview from "../features/product/Preview";
+import CustomText from "../features/product/CustomText";
 import AddItemNotif from "../features/cart/AddItemNotif";
-import {
-  getCustomStyles,
-  updateCustomText,
-} from "../features/product/customTextSlice";
 import FavoriteBtn from "../features/product/FavoriteBtn";
+import FontOptions from "../features/product/FontOptions";
+import ProductSpecs from "../features/product/ProductSpecs";
+import ProductHeader from "../features/product/ProductHeader";
+import ProductColors from "../features/product/ProductColors";
+import ProductImages from "../features/product/ProductImages";
+import DecalColorOptions from "../features/product/DecalColorOptions";
 
 function ProductView() {
   const dispatch = useDispatch();
-
-  const {
-    customText,
-    customFontCss,
-    customFontDisplay,
-    customColorCss,
-    customColorDisplay,
-  } = useSelector(getCustomStyles);
-
+  const itemID = generateUniqueItemID();
   const productDetails = useLoaderData();
-  const { id, name, price, images, colors, description } = productDetails[0];
-
-  const [customStyle, setCustomStyle] = useState(
-    "focus:outline-none text-xl border font-anton rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default",
-  );
-  const showRequired = useSelector(getShowRequired);
   const showCartNotif = useSelector(getShowCartNotif);
 
+  const { id, name, price, images, colors, description } = productDetails[0];
+  const { customText, customFontDisplay, customColorDisplay } =
+    useSelector(getCustomStyles);
   const [productColor, setProductColor] = useState(colors[0]);
-  const [displayPhoto, setDisplayPhoto] = useState(images[0]);
-  const itemID = generateUniqueItemID();
 
   const newItem = {
     id: itemID,
@@ -62,107 +46,33 @@ function ProductView() {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    function generatePreview() {
-      const initialStyle =
-        "focus:outline-none text-2xl border rounded px-4 py-4 md:w-[80%] w-full border-seashellNude cursor-default";
-      setCustomStyle(`${initialStyle} ${customFontCss} ${customColorCss}`);
-    }
-
-    generatePreview();
-  }, [customFontCss, customColorCss]);
-
-  function handleClickProdColor(color) {
-    setProductColor(color);
-  }
-
-  function handleClickSidePhoto(img) {
-    setDisplayPhoto(img);
-  }
-
   return (
     <section>
       <AddItemNotif item={newItem} shown={showCartNotif} />
       <div className="flex flex-col space-y-4 px-10 py-10 md:flex-row md:space-x-4 md:space-y-0 md:px-14">
-        <div className="flex flex-col-reverse md:w-2/4 md:flex-row md:space-x-4">
-          <div className="mt-4 flex space-x-1.5 md:mt-0 md:flex-col md:space-x-0 md:space-y-2">
-            {images.map((img) => (
-              <SideImageThumbnail
-                img={img}
-                key={img}
-                display={displayPhoto}
-                handleClick={() => handleClickSidePhoto(img)}
-              />
-            ))}
-          </div>
-          <div className="">
-            <img src={displayPhoto} alt="" className="w-full md:h-[35rem]" />
-          </div>
-        </div>
+        <ProductImages images={images} />
 
         <div className="mx-0 space-y-3 md:mt-0 md:w-2/4">
-          <div className="space-y-1 border-b border-lightBrown pb-3">
-            <h1 className="text-3xl uppercase text-darkBrown">{name}</h1>
-            <p className="font-price text-2xl tracking-wider">
-              {formatCurrency(price)}
-            </p>
-          </div>
+          <ProductHeader name={name} price={price} />
+          <ProductColors
+            colors={colors}
+            productColor={productColor}
+            setProductColor={setProductColor}
+          />
 
-          {colors.length > 0 && (
-            <div className="space-y-1">
-              <div className="flex items-center space-x-1 text-darkBrown">
-                <h2 className="text-lg font-semibold uppercase ">
-                  Product Color:
-                </h2>
-                <span className="font-medium">{productColor}</span>
-              </div>
-              <div className="flex space-x-1">
-                {colors.map((color) => (
-                  <ColorBlock
-                    color={color}
-                    key={color}
-                    selectedColor={productColor}
-                    handleClick={() => handleClickProdColor(color)}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
+          <CustomText />
 
-          <div className="space-y-1">
-            <h2 className="text-lg font-semibold uppercase text-darkBrown">
-              Custom Text:
-            </h2>
-            <input
-              type="text"
-              value={customText}
-              onChange={(e) => dispatch(updateCustomText(e.target.value))}
-              className="w-full rounded border border-lightBrown px-2 py-1 focus:outline-none md:w-[80%]"
-            />
-            <span className={`mt-2 text-sm text-mediumBrown ${showRequired}`}>
-              Required!
-            </span>
-          </div>
           <div className="flex flex-col space-y-4 md:flex-row md:space-y-0">
             <FontOptions />
             <DecalColorOptions />
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold uppercase text-darkBrown">
-              Preview:
-            </h2>
-            <div className={customStyle}>{customText}</div>
-          </div>
+          <Preview />
 
           <div className="my-10 flex space-x-2 border-b border-lightBrown pb-5">
-            <button
-              className="w-[90%] rounded-md bg-mediumBrown px-10 py-2 tracking-widest text-white duration-150 md:w-[70%]"
-              onClick={() => dispatch(addToCart(newItem))}
-            >
+            <Button type="cart" onClick={() => dispatch(addToCart(newItem))}>
               add to cart
-            </button>
-
+            </Button>
             <FavoriteBtn id={id} />
           </div>
 
