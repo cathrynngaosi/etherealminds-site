@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { getFAQs } from "../services/apiShop";
-import Accordion from "../ui/Accordion";
+import Accordion from "../features/faqs/Accordion";
 
 function FAQs() {
   const faqs = useLoaderData();

@@ -1,4 +1,4 @@
-import AccordionItem from "../ui/AccordionItem";
+import AccordionItem from "./AccordionItem";
 
 function Accordion({ category, faqs }) {
   return (
