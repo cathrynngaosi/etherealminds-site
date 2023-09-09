@@ -57,6 +57,7 @@ function AddItemNotif({ shown, item }) {
             <Link
               to="/cart"
               className="w-full rounded-md border border-lightBrown bg-seaSalt px-5 py-2 text-center text-xs tracking-widest text-darkBrown duration-150"
+              onClick={close}
             >
               view cart ({cartQty})
             </Link>
