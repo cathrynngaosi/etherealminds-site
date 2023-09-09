@@ -26,8 +26,13 @@ function ProductView() {
   const showCartNotif = useSelector(getShowCartNotif);
 
   const { id, name, price, images, colors, description } = productDetails[0];
-  const { customText, customFontDisplay, customColorDisplay } =
-    useSelector(getCustomStyles);
+  const {
+    customText,
+    customFontDisplay,
+    customColorDisplay,
+    customFontCss,
+    customColorCss,
+  } = useSelector(getCustomStyles);
   const [productColor, setProductColor] = useState(colors[0]);
 
   const newItem = {
@@ -41,6 +46,8 @@ function ProductView() {
     customText,
     customColorDisplay,
     customFontDisplay,
+    customFontCss,
+    customColorCss,
   };
 
   useEffect(() => {

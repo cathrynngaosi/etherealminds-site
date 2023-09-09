@@ -6,17 +6,17 @@ function UpdateItemQty({ id, qty }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="m-auto flex w-1/5 justify-center space-x-4 text-center">
+    <div className="my-auto flex justify-center space-x-4 text-center md:m-auto md:w-1/5 ">
       <button className="cursor-pointer">
         <GrFormSubtract
-          className="text-lg"
+          className="text-sm md:text-lg"
           onClick={() => dispatch(decreaseQty(id))}
         />
       </button>
-      <span className="font-price text-lg ">{qty}</span>
+      <span className="font-price text-sm md:text-lg ">{qty}</span>
       <button className="cursor-pointer">
         <GrFormAdd
-          className="text-lg"
+          className="text-sm md:text-lg"
           onClick={() => dispatch(increaseQty(id))}
         />
       </button>
