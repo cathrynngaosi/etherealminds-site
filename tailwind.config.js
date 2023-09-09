@@ -15,6 +15,7 @@ export default {
         seashellPink: "#F4E7E1",
         seashellNude: "#F6EDE9",
         seaSalt: "#fbfaf9",
+        chestnut: "#84563f",
         coffee: "#513629",
         darkBrown: "#623C29",
         mediumBrown: "#966147",

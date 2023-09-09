@@ -56,7 +56,7 @@ function AddItemNotif({ shown, item }) {
           <div className="flex space-x-2">
             <Link
               to="/cart"
-              className="w-full rounded-md border border-lightBrown bg-seaSalt px-5 py-2 text-center text-xs tracking-widest text-darkBrown duration-150"
+              className="w-full rounded-md border border-lightBrown bg-seaSalt px-5 py-2 text-center text-xs tracking-widest text-darkBrown duration-150 hover:bg-mediumBrown hover:text-white"
               onClick={close}
             >
               view cart ({cartQty})
