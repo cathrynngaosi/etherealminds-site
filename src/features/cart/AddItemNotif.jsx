@@ -1,11 +1,12 @@
 import { BiCheckCircle } from "react-icons/bi";
 import { MdOutlineClose } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { closeCartNotif } from "./cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { closeCartNotif, getTotalCartQuantity } from "./cartSlice";
 import { reset } from "../product/customTextSlice";
 
 function AddItemNotif({ shown, item }) {
+  const cartQty = useSelector(getTotalCartQuantity);
   const dispatch = useDispatch();
   const {
     name,
@@ -57,7 +58,7 @@ function AddItemNotif({ shown, item }) {
               to="/cart"
               className="w-full rounded-md border border-lightBrown bg-seaSalt px-5 py-2 text-center text-xs tracking-widest text-darkBrown duration-150"
             >
-              view cart (1)
+              view cart ({cartQty})
             </Link>
           </div>
         </div>
