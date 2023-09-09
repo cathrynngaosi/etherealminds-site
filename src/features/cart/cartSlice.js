@@ -20,7 +20,6 @@ const cartSlice = createSlice({
       }
     },
     deleteFromCart(state, action) {
-      console.log(action, state);
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
     increaseQty(state, action) {
@@ -32,6 +31,9 @@ const cartSlice = createSlice({
       const item = state.cart.find((item) => item.id === action.payload);
       item.qty--;
       item.totalPrice = item.qty * item.unitPrice;
+
+      if (item.qty === 0)
+        state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
     closeCartNotif(state, action) {
       state.showCartNotif = action.payload;
