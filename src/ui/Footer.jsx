@@ -15,7 +15,7 @@ function Footer() {
           <Link to="/faqs"> faqs </Link>
         </div>
         <div className="space-x-4">
-          <Link to="/account"> account </Link>
+          <Link to="/login"> account </Link>
           <Link to="/favorites"> faves </Link>
           <Link to="/cart"> cart </Link>
         </div>

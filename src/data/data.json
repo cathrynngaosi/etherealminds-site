@@ -305,5 +305,55 @@
       "name": "Leather Items",
       "cover": "../src/data/images/leather-keychains/cover.JPG"
     }
+  ],
+  "faqs": [
+    {
+      "id": "q1",
+      "category": "products",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q2",
+      "category": "products",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q3",
+      "category": "products",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q4",
+      "category": "products",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q5",
+      "category": "orders",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q6",
+      "category": "orders",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q7",
+      "category": "orders",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    },
+    {
+      "id": "q8",
+      "category": "orders",
+      "question": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      "answer": "Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Faucibus a pellentesque sit amet."
+    }
   ]
 }

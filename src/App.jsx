@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import FAQs, { loader as faqsLoader } from "./pages/FAQs";
 import Shop, { loader as collectionsLoader } from "./pages/Shop";
 import ProductList, { loader as listLoader } from "./features/shop/ProductList";
 import ProductView, { loader as productLoader } from "./pages/ProductView";
@@ -38,12 +39,9 @@ const router = createBrowserRouter([
         loader: productLoader,
       },
       {
-        path: "/cart",
-        element: <ViewCart />,
-      },
-      {
-        path: "/favorites",
-        element: <Favorites />,
+        path: "/faqs",
+        element: <FAQs />,
+        loader: faqsLoader,
       },
       {
         path: "/login",
@@ -52,6 +50,14 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
+      },
+      {
+        path: "/cart",
+        element: <ViewCart />,
       },
     ],
   },

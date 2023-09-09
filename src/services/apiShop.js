@@ -33,3 +33,13 @@ export async function getFavoritesList(query) {
 
   return data;
 }
+
+export async function getFAQs() {
+  const res = await fetch(`${API_URL}/faqs`);
+
+  if (!res.ok) throw Error("Failed getting favorites");
+
+  const data = await res.json();
+
+  return data;
+}
