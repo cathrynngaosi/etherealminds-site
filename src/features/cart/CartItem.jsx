@@ -6,7 +6,7 @@ function CartItem({ item }) {
   const {
     id,
     name,
-    price,
+    unitPrice,
     qty,
     thumbnail,
     productColor,
@@ -30,10 +30,10 @@ function CartItem({ item }) {
         </div>
       </div>
 
-      <UpdateItemQty />
+      <UpdateItemQty id={id} qty={qty} />
 
       <div className="m-auto w-1/5 text-center">
-        <p className="font-price">{formatCurrency(price)}</p>
+        <p className="font-price">{formatCurrency(unitPrice * qty)}</p>
       </div>
 
       <DeleteItem id={id} />

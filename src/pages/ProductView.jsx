@@ -33,7 +33,8 @@ function ProductView() {
   const newItem = {
     id: itemID,
     name,
-    price,
+    unitPrice: price,
+    totalPrice: price,
     qty: 1,
     thumbnail: images[0],
     productColor,
