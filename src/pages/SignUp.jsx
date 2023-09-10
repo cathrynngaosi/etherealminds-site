@@ -10,7 +10,7 @@ function SignUp() {
     <section className="p-10 text-darkBrown">
       <h1 className="mb-5 text-center uppercase">SignUp</h1>
 
-      <div className="mx-auto w-1/2 space-y-3">
+      <div className="mx-auto space-y-3 md:w-1/2">
         <div className="flex space-x-2">
           <Input type="text" placeholder="first name" cols="2">
             <FiUser className="input-icon" />

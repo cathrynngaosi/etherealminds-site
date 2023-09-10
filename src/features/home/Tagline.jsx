@@ -1,7 +1,7 @@
 function Tagline() {
   return (
     <section className="bg-seashellPink">
-      <div className="m-auto w-4/5 p-10 text-center">
+      <div className="m-auto w-full p-10 text-center md:w-4/5">
         <h1 className="mb-1">handcrafted and customized with love </h1>
         <p className="leading-relaxed">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia

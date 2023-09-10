@@ -11,7 +11,11 @@ function ProductCard({ name, price, img, location }) {
       }
     >
       <div className="cursor-pointer duration-100 hover:scale-105">
-        <img src={img} alt="" className="h-80" />
+        <img
+          src={img}
+          alt=""
+          className={location === "home" ? "h-96" : "md:h-80"}
+        />
         <div className="py-2">
           <h2>{name}</h2>
           <p className="font-price tracking-wider">₱{price}.00</p>

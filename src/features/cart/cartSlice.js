@@ -15,6 +15,7 @@ const cartSlice = createSlice({
         state.showRequired = "hidden";
         state.showCartNotif = true;
         state.cart.push(action.payload);
+        window.scrollTo(0, 0);
       } else {
         state.showRequired = "block";
       }

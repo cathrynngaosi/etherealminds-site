@@ -4,7 +4,7 @@ function OrderSteps() {
       <div className="m-auto mb-3 w-4/5 text-center">
         <h1>make it uniquely yours!</h1>
       </div>
-      <div className="mx-5 flex space-x-16">
+      <div className="flex flex-col space-y-8 md:mx-5 md:flex-row md:space-x-16 md:space-y-0">
         <div className="space-y-2 text-center">
           <div>
             <h2 className="text-2xl font-medium">1</h2>

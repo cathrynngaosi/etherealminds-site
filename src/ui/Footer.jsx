@@ -4,11 +4,11 @@ import { AiOutlineFacebook } from "react-icons/ai";
 
 function Footer() {
   return (
-    <footer className="mt-auto flex items-center justify-between bg-seashellPink px-6 py-6">
+    <footer className="mt-auto flex flex-col items-center justify-between space-y-3 bg-seashellPink px-6 py-6 md:flex-row md:space-y-0">
       <div>
         <img src="../../public/EMLogo.svg" alt="" className="h-14" />
       </div>
-      <div className="flex flex-col items-center space-y-3">
+      <div className="flex flex-row items-center space-x-6 md:flex-col md:space-x-0 md:space-y-3">
         <div className="space-x-4">
           <Link to="/"> home </Link>
           <Link to="/shop"> shop </Link>
@@ -20,7 +20,7 @@ function Footer() {
           <Link to="/cart"> cart </Link>
         </div>
       </div>
-      <div className="pr-10">
+      <div className="md:pr-10">
         <p>follow us</p>
         <div className="flex items-center justify-center space-x-1">
           <BsInstagram className="cursor-pointer text-xl" />

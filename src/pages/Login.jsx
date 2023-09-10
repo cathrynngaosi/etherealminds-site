@@ -9,7 +9,7 @@ function Login() {
     <section className="p-10 text-darkBrown">
       <h1 className="mb-5 text-center uppercase">Login</h1>
       <form>
-        <div className="mx-auto w-1/2 space-y-3">
+        <div className="mx-auto space-y-3 md:w-1/2">
           <Input type="email" placeholder="email address" cols="1">
             <MdOutlineMailOutline className="input-icon" />
           </Input>
