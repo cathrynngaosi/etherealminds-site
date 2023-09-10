@@ -6,11 +6,14 @@ function DeleteItem(id) {
   const dispatch = useDispatch();
 
   return (
-    <div className="m-auto w-1/5 text-center">
+    <div className="w-1/5 text-center md:m-auto">
       <GoTrash
-        className="mx-auto cursor-pointer"
+        className="mx-auto hidden cursor-pointer md:block"
         onClick={() => dispatch(deleteFromCart(id))}
       />
+      <p className="block cursor-pointer text-xs hover:underline md:hidden">
+        Remove
+      </p>
     </div>
   );
 }

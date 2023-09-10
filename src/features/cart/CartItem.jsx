@@ -25,22 +25,24 @@ function CartItem({ item }) {
         <div className="flex w-4/5 flex-col justify-between">
           <div>
             <div className="flex justify-between">
-              <p className="font-medium">{name}</p>
-              <p className="mt-0.5 hidden cursor-pointer text-xs hover:underline md:hidden">
-                Remove
+              <p className="font-medium">
+                {name} {productColor && `(${productColor})`}
               </p>
-              <p className="font-price text-sm md:hidden">
-                {formatCurrency(unitPrice * qty)}
-              </p>
+              <span className="md:hidden">
+                <DeleteItem id={id} />
+              </span>
             </div>
-            <p className="text-sm font-light">{productColor}</p>
+            <p className="text-sm font-light"></p>
             <ViewCustomText
               text={customText}
               font={customFontCss}
               color={customColorCss}
             />
           </div>
-          <div className="flex justify-between md:hidden">
+          <div className="mt-1 flex justify-between md:hidden">
+            <p className="font-price text-sm md:hidden">
+              {formatCurrency(unitPrice * qty)}
+            </p>
             <UpdateItemQty id={id} qty={qty} />
           </div>
         </div>
