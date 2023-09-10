@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function useToggleMobileNav() {
+  const { pathname } = useLocation();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  // toggle menu on click of icon
   useEffect(() => {
     async function showNavbar() {
       const open =
@@ -17,9 +20,13 @@ function useToggleMobileNav() {
       }
     }
 
-    console.log(menuIsOpen);
     showNavbar();
   }, [menuIsOpen]);
+
+  // close menu on redirect
+  useEffect(() => {
+    setMenuIsOpen(false);
+  }, [pathname]);
 
   return { menuIsOpen, setMenuIsOpen };
 }
