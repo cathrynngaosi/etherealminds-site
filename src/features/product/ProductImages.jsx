@@ -20,8 +20,8 @@ function ProductImages({ images }) {
           />
         ))}
       </div>
-      <div className="">
-        <img src={displayPhoto} alt="" className="w-full md:h-[35rem]" />
+      <div className="w-fit">
+        <img src={displayPhoto} alt="" className="w-full" />
       </div>
     </div>
   );

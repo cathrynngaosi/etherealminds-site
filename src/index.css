@@ -31,10 +31,10 @@ h1 {
 }
 
 .thumbnail {
-  @apply h-20 cursor-pointer;
+  @apply w-20 cursor-pointer;
 }
 .thumbnail-selected {
-  @apply h-20 cursor-pointer border-2 border-darkBrown;
+  @apply w-20 cursor-pointer border-2 border-darkBrown;
 }
 
 /* HAMBURGER MENU */

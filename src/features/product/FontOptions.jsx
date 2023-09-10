@@ -6,7 +6,7 @@ function FontOptions() {
   const { customFontCss, customFontDisplay } = useSelector(getCustomStyles);
 
   return (
-    <div className="w-1/2 space-y-1">
+    <div className="space-y-1 xl:w-1/2">
       <div className="flex items-center space-x-1 text-darkBrown">
         <h2 className="text-lg font-semibold uppercase ">Font:</h2>
         <span className="font-medium capitalize">{customFontDisplay}</span>
