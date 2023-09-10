@@ -11,7 +11,7 @@ function useToggleMobileNav() {
       const open =
         "m-h-screen opacity-[95%] md:hidden fixed inset-0 z-20 h-full w-full flex-col items-center divide-y divide-lightBrown bg-seashellPink px-6 py-1 pb-4 pt-24 lowercase tracking-widest transition-all ease-linear duration-300";
       const close =
-        "m-h-screen opacity-0 md:hidden absolute inset-0 z-20 h-full w-full flex-col items-center divide-y divide-lightBrown bg-seashellPink px-6 py-1 pb-4 pt-24 lowercase tracking-widest transition-all ease-linear duration-300";
+        "m-h-screen opacity-0 md:hidden absolute inset-0 h-0 w-0 flex-col items-center divide-y divide-lightBrown bg-seashellPink px-6 py-1 pb-4 pt-24 lowercase tracking-widest transition-all ease-linear duration-300";
 
       if (menuIsOpen) {
         document.getElementById("mobile-menu").className = open;
