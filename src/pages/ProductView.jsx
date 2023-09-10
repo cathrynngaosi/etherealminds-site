@@ -57,7 +57,7 @@ function ProductView() {
   return (
     <section>
       <AddItemNotif item={newItem} shown={showCartNotif} />
-      <div className="flex flex-col space-y-4 px-10 py-10 md:flex-row md:space-x-4 md:space-y-0 md:px-14">
+      <div className="flex flex-col space-y-4 px-10 py-10 md:flex-row md:space-x-6 md:space-y-0 md:px-14">
         <ProductImages images={images} />
 
         <div className="mx-0 space-y-3 md:mt-0 md:w-2/4">
@@ -70,7 +70,7 @@ function ProductView() {
 
           <CustomText />
 
-          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0">
+          <div className="flex flex-col space-y-4 xl:flex-row xl:space-y-0">
             <FontOptions />
             <DecalColorOptions />
           </div>
