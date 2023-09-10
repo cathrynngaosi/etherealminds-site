@@ -10,7 +10,6 @@ function AddItemNotif({ shown, item }) {
   const dispatch = useDispatch();
   const {
     name,
-    price,
     thumbnail,
     productColor,
     customText,
@@ -18,21 +17,33 @@ function AddItemNotif({ shown, item }) {
     customFontDisplay,
   } = item;
 
+  const bgOpenStyle =
+    "fixed inset-0 flex h-full w-full items-center justify-center bg-darkBrown/30 opacity-[95%]  transition-all duration-300 ease-linear";
+
+  const notifOpenStyle =
+    "absolute top-1 z-30 w-full space-y-4 rounded bg-seashellPink p-5 pt-3 text-darkBrown opacity-100 transition-all duration-500  ease-linear md:right-1 md:w-1/5";
+
+  const bgCloseStyle =
+    "inset-0 z-auto contents h-full w-full items-center justify-center bg-darkBrown/30 opacity-0 transition-all duration-300 ease-linear";
+
+  const notifCloseStyle =
+    "absolute z-0 hidden w-full space-y-4 rounded bg-seashellPink p-5 pt-3 text-darkBrown opacity-0 transition-all duration-500  ease-linear md:left-96 md:w-1/5";
+
   function close() {
     dispatch(reset());
     dispatch(closeCartNotif(false));
   }
 
-  return shown ? (
+  return (
     <div onClick={close}>
-      <div className="fixed inset-0 flex h-full w-full items-center justify-center bg-darkBrown/30"></div>
+      <div className={shown ? bgOpenStyle : bgCloseStyle}></div>
       <div
         className="relative"
         onClick={(e) => {
           e.stopPropagation();
         }}
       >
-        <div className="absolute top-1 z-30 w-full space-y-4 rounded bg-seashellPink p-5 pt-3 text-darkBrown md:right-1 md:w-1/5">
+        <div className={shown ? notifOpenStyle : notifCloseStyle}>
           <div className="flex items-center justify-between">
             <h2 className="flex items-center font-bold lowercase text-darkBrown">
               <BiCheckCircle className="mr-1" /> Added to cart
@@ -65,7 +76,7 @@ function AddItemNotif({ shown, item }) {
         </div>
       </div>
     </div>
-  ) : null;
+  );
 }
 
 export default AddItemNotif;

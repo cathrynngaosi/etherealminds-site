@@ -11,7 +11,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      if (action.payload !== "") {
+      if (action.payload.customText !== "") {
         state.showRequired = "hidden";
         state.showCartNotif = true;
         state.cart.push(action.payload);

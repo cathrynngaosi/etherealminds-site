@@ -7,15 +7,11 @@ import { getTotalCartQuantity } from "../features/cart/cartSlice";
 
 import HamburgerBtn from "./HamburgerBtn";
 import MobileMenu from "./MobileMenu";
+import useToggleMobileNav from "../hooks/useToggleMobileNav";
 
 function Navbar() {
   const cartQty = useSelector(getTotalCartQuantity);
-
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  function handleOpenMenu() {
-    setMenuIsOpen((isOpen) => !isOpen);
-  }
+  const { menuIsOpen, setMenuIsOpen } = useToggleMobileNav();
 
   return (
     <>
@@ -25,7 +21,10 @@ function Navbar() {
           <NavLink to="/shop"> shop </NavLink>
           <NavLink to="/faqs"> faqs </NavLink>
         </div>
-        <HamburgerBtn menuIsOpen={menuIsOpen} onClick={handleOpenMenu} />
+        <HamburgerBtn
+          menuIsOpen={menuIsOpen}
+          onClick={() => setMenuIsOpen((isOpen) => !isOpen)}
+        />
 
         <div>
           <Link to="/">
