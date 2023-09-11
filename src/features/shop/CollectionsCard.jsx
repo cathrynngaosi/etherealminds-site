@@ -6,8 +6,8 @@ function CollectionsCard({ collection }) {
 
   return (
     <Link to={formatLink(name)}>
-      <div className="cursor-pointer">
-        <img src={cover} alt="" className="md:h-80" />
+      <div className="cursor-pointer duration-100 hover:scale-105">
+        <img src={cover} alt="" />
         <div className="py-2">
           <h2>{name}</h2>
         </div>

@@ -22,7 +22,7 @@ function CartItem({ item }) {
         <div>
           <img src={thumbnail} alt="" className="h-16" />
         </div>
-        <div className="flex w-4/5 flex-col justify-between">
+        <div className="flex w-full flex-col justify-between md:w-4/5">
           <div>
             <div className="flex justify-between">
               <p className="font-medium">
