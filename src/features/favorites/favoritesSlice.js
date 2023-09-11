@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadFromLocalStorage } from "../../hooks/useLocalStorage";
+
+const favesFromLocalStorage = loadFromLocalStorage();
+const savedFavorites = favesFromLocalStorage?.favorites.favorites;
 
 const initialState = {
-  favorites: [],
+  favorites: savedFavorites ? savedFavorites : [],
 };
 
 const favortiesSlice = createSlice({

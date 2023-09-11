@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { loadFromLocalStorage } from "../../hooks/useLocalStorage";
+
+const cartFromLocalStorage = loadFromLocalStorage();
+const savedCart = cartFromLocalStorage?.cart.cart;
 
 const initialState = {
-  cart: [],
+  cart: savedCart ? savedCart : [],
   showRequired: "hidden",
   showCartNotif: false,
 };

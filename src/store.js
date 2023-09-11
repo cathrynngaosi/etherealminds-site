@@ -1,12 +1,19 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import cartSlice from "./features/cart/cartSlice";
 import customTextSlice from "./features/product/customTextSlice";
 import favoritesSlice from "./features/favorites/favoritesSlice";
+import {
+  loadFromLocalStorage,
+  saveToLocalStorage,
+} from "./hooks/useLocalStorage";
 
-export const store = configureStore({
-  reducer: {
-    cart: cartSlice,
-    customText: customTextSlice,
-    favorites: favoritesSlice,
-  },
+const rootReducers = combineReducers({
+  cart: cartSlice,
+  customText: customTextSlice,
+  favorites: favoritesSlice,
 });
+
+const store = configureStore({ reducer: rootReducers }, loadFromLocalStorage());
+store.subscribe(() => saveToLocalStorage(store.getState()));
+
+export default store;
