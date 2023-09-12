@@ -6,8 +6,8 @@ function JoinTheClub() {
       <div className="m-auto p-10 text-center md:w-4/5 md:p-14">
         <h1>join the club and get 10% off your first order!</h1>
         <p className="leading-relaxed">
-          Officia accusamus error maxime nihil, autem suscipit tenetur odit
-          consequuntur nesciunt aliquam sit sed animi assumenda.
+          sign up to receive weekly newsletter updates, exclusive deals, and be
+          first to know about new products and special promotions
         </p>
         <div className="relative mx-auto py-3 md:w-2/4 ">
           <input

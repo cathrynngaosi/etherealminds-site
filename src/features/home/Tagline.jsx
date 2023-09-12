@@ -3,12 +3,12 @@ function Tagline() {
     <section className="bg-seashellPink">
       <div className="m-auto w-full p-10 text-center md:w-4/5">
         <h1 className="mb-1">handcrafted and customized with love </h1>
-        <p className="leading-relaxed">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia
-          accusamus error maxime nihil, autem suscipit tenetur odit consequuntur
-          nesciunt aliquam sit sed animi assumenda quaerat quae commodi. Eum,
-          tempora, reiciendis cum quae nobis voluptatibus dolor perferendis
-          possimus alias libero repellat?
+        <p className="lowercase leading-relaxed">
+          established in 2016, we at etherealmindsph have been customizing items
+          with the help of our little cutting machine to create something one of
+          a kind for you! so whether it&apos;s a unique gift for a loved one or
+          a personalized treat for yourself, explore our collection today and
+          discover the magic of personalized perfection!
         </p>
       </div>
     </section>

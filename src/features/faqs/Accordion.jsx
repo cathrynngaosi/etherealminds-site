@@ -7,7 +7,7 @@ function Accordion({ category, faqs }) {
         {category}
       </h2>
       {faqs
-        .filter((faq) => faq.category === "products")
+        .filter((faq) => faq.category === category)
         .map((faq) => (
           <AccordionItem
             key={faq.id}
