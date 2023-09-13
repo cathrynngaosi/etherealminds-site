@@ -1,6 +1,6 @@
 import { formatTitle } from "../utils/helpers";
 
-const API_URL = "http://localhost:8000";
+const API_URL = "https://etherealminds-server.vercel.app";
 
 export async function getAllCollections() {
   const res = await fetch(`${API_URL}/collections`);
