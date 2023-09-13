@@ -77,3 +77,8 @@ export function getCustomColorCss(color) {
       return "bg-gradient-to-b from-cyan-400 to-rose-400 text-transparent bg-clip-text";
   }
 }
+
+export function getImage(url) {
+  const API_URL = "https://etherealminds-server.vercel.app";
+  return API_URL + url;
+}
