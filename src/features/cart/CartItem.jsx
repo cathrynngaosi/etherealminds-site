@@ -1,4 +1,4 @@
-import { formatCurrency } from "../../utils/helpers";
+import { formatCurrency, getImage } from "../../utils/helpers";
 import DeleteItem from "./DeleteItem";
 import UpdateItemQty from "./UpdateItemQty";
 import ViewCustomText from "./ViewCustomText";
@@ -20,7 +20,7 @@ function CartItem({ item }) {
     <div className="flex rounded bg-seashellNude p-3 text-darkBrown">
       <div className="flex w-full space-x-2 md:w-3/5">
         <div>
-          <img src={thumbnail} alt="" className="h-16" />
+          <img src={getImage(thumbnail)} alt="" className="h-16" />
         </div>
         <div className="flex w-full flex-col justify-between md:w-4/5">
           <div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SideImageThumbnail from "./SideImageThumbnail";
+import { getImage } from "../../utils/helpers";
 
 function ProductImages({ images }) {
   const [displayPhoto, setDisplayPhoto] = useState(images[0]);
@@ -21,7 +22,7 @@ function ProductImages({ images }) {
         ))}
       </div>
       <div className="w-fit">
-        <img src={displayPhoto} alt="" className="w-full" />
+        <img src={getImage(displayPhoto)} alt="" className="w-full" />
       </div>
     </div>
   );

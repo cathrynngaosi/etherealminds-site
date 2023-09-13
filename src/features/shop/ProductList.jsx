@@ -1,7 +1,7 @@
 import { useLoaderData, useParams, useSearchParams } from "react-router-dom";
 import { getProducts } from "../../services/apiShop";
 import ProductCard from "../../ui/ProductCard";
-import { formatTitle } from "../../utils/helpers";
+import { formatTitle, getImage } from "../../utils/helpers";
 import { useEffect } from "react";
 
 function ProductList() {

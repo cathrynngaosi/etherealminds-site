@@ -15,21 +15,21 @@ function CrowdFavorites() {
           name="Macaron Mug"
           price="330"
           location="home"
-          img={`${getImage("/images/macaron-mugs/cover.JPG")}`}
+          img={"/images/macaron-mugs/cover.JPG"}
         />
 
         <ProductCard
           name="Egg Tumbler"
           price="300"
           location="home"
-          img={`${getImage("/images/egg-tumblers/2.JPG")}`}
+          img={"/images/egg-tumblers/2.JPG"}
         />
 
         <ProductCard
           name="Small Jewelry Box"
           price="350"
           location="home"
-          img={`${getImage("/images/sm-jewelry-box/cover.JPG")}`}
+          img={"/images/sm-jewelry-box/cover.JPG"}
         />
       </div>
 
