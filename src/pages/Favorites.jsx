@@ -6,7 +6,6 @@ import { getFavorites } from "../features/favorites/favoritesSlice";
 
 import Button from "../ui/Button";
 import ProductCard from "../ui/ProductCard";
-import { getImage } from "../utils/helpers";
 
 function Favorites() {
   const [faves, setFaves] = useState([]);
@@ -32,7 +31,7 @@ function Favorites() {
                 key={prod.id}
                 name={prod.name}
                 price={prod.price}
-                img={getImage(prod.images[0])}
+                img={prod.images[0]}
                 location="favorites"
               />
             ))}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { formatLink, getImage } from "../utils/helpers";
+import { formatLink } from "../utils/helpers";
 
 function ProductCard({ name, price, img, location }) {
   return (
@@ -11,7 +11,7 @@ function ProductCard({ name, price, img, location }) {
       }
     >
       <div className="cursor-pointer duration-100 hover:scale-105">
-        <img src={getImage(img)} alt="" className="w-80" />
+        <img src={img} alt="" className="w-80" />
         <div className="py-2">
           <h2>{name}</h2>
           <p className="font-price tracking-wider">₱{price}.00</p>

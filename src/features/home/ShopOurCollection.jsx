@@ -1,5 +1,4 @@
 import CollectionsMiniPreview from "../../ui/CollectionsMiniPreview";
-import { getImage } from "../../utils/helpers";
 
 function ShopOurCollection() {
   return (
@@ -11,27 +10,27 @@ function ShopOurCollection() {
       <div className="flex flex-wrap items-center justify-center space-x-5 space-y-4 md:space-x-10">
         <CollectionsMiniPreview
           name="tumblers"
-          img={getImage("images/vacuum-tumblers/cover.JPG")}
+          img="../src/data/images/vacuum-tumblers/cover.JPG"
         />
 
         <CollectionsMiniPreview
           name="mugs"
-          img={getImage("images/double-walled-mugs/cover.JPG")}
+          img="../src/data/images/double-walled-mugs/cover.JPG"
         />
 
         <CollectionsMiniPreview
           name="jewelry boxes"
-          img={getImage("images/sm-jewelry-box/1.PNG")}
+          img="../src/data/images/sm-jewelry-box/1.PNG"
         />
 
         <CollectionsMiniPreview
           name="glass items"
-          img={getImage("images/wine-glass/cover.JPG")}
+          img="../src/data/images/wine-glass/cover.JPG"
         />
 
         <CollectionsMiniPreview
           name="leather items"
-          img={getImage("images/leather-keychains/cover.JPG")}
+          img="../src/data/images/leather-keychains/cover.JPG"
         />
       </div>
     </section>
