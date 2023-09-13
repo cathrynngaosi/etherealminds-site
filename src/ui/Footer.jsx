@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 import { AiOutlineFacebook } from "react-icons/ai";
+import { getImage } from "../utils/helpers";
 
 function Footer() {
   return (
     <footer className="mt-auto flex flex-col items-center justify-between space-y-3 bg-seashellPink px-6 py-6 md:flex-row md:space-y-0">
       <div>
-        <img src="../../public/EMLogo.svg" alt="" className="h-14" />
+        <img src={getImage("/images/EMLogo.svg")} alt="" className="h-14" />
       </div>
       <div className="flex flex-row items-center space-x-6 md:flex-col md:space-x-0 md:space-y-3">
         <div className="space-x-4">
