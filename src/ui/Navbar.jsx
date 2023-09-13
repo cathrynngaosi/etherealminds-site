@@ -8,6 +8,7 @@ import { getTotalCartQuantity } from "../features/cart/cartSlice";
 import HamburgerBtn from "./HamburgerBtn";
 import MobileMenu from "./MobileMenu";
 import useToggleMobileNav from "../hooks/useToggleMobileNav";
+import { getImage } from "../utils/helpers";
 
 function Navbar() {
   const cartQty = useSelector(getTotalCartQuantity);
@@ -28,7 +29,7 @@ function Navbar() {
 
         <div>
           <Link to="/">
-            <img src="../../public/EMLogo.svg" alt="" className="h-14" />
+            <img src={getImage("/public/EMLogo.svg")} alt="" className="h-14" />
           </Link>
         </div>
         <div className="flex space-x-3">

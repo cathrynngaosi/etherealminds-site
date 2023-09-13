@@ -1,11 +1,12 @@
 import { useState } from "react";
 import SideImageThumbnail from "./SideImageThumbnail";
+import { getImage } from "../../utils/helpers";
 
 function ProductImages({ images }) {
   const [displayPhoto, setDisplayPhoto] = useState(images[0]);
 
   function handleClickSidePhoto(img) {
-    setDisplayPhoto(img);
+    setDisplayPhoto(getImage(img));
   }
 
   return (
@@ -13,7 +14,7 @@ function ProductImages({ images }) {
       <div className="mt-4 flex space-x-1.5 overflow-x-scroll md:mt-0 md:flex-col md:space-x-0 md:space-y-2">
         {images.map((img) => (
           <SideImageThumbnail
-            img={img}
+            img={getImage(img)}
             key={img}
             display={displayPhoto}
             handleClick={() => handleClickSidePhoto(img)}
@@ -21,7 +22,7 @@ function ProductImages({ images }) {
         ))}
       </div>
       <div className="w-fit">
-        <img src={displayPhoto} alt="" className="w-full" />
+        <img src={getImage(displayPhoto)} alt="" className="w-full" />
       </div>
     </div>
   );

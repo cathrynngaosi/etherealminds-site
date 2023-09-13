@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { closeCartNotif, getTotalCartQuantity } from "./cartSlice";
 import { reset } from "../product/customTextSlice";
+import { getImage } from "../../utils/helpers";
 
 function AddItemNotif({ shown, item }) {
   const cartQty = useSelector(getTotalCartQuantity);
@@ -52,7 +53,7 @@ function AddItemNotif({ shown, item }) {
           </div>
           <div className="flex space-x-2">
             <div>
-              <img src={thumbnail} alt="" className="h-14" />
+              <img src={getImage(thumbnail)} alt="" className="h-14" />
             </div>
             <div className="space-y-[1px]">
               <p className="text-sm font-medium">{name}</p>
