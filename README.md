@@ -1,8 +1,23 @@
-# React + Vite
+<h1>etherealmindsph website</h1>
+<p>This website offers a user interface for browsing, personalizing designs for each item, and adding items to the shopping cart.</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p>⭐️ Live demo: <a href="https://etherealmindsph.vercel.app/" target="_blank">etherealmindsph.vercel.app</a></p>
 
-Currently, two official plugins are available:
+<h2>Built with:</h2>
+<ul>
+  <li>React.js</li>
+  <li>Redux</li>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+</ul>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>Dependencies:</h2>
+<ul>
+  <li>Redux Toolkit</li>
+  <li>JSON Server</li>
+  <li>React Dom</li>
+  <li>React Icons</li>
+  <li>React Redux</li>
+  <li>React Router DOM</li>
+  <li>Redux Persist</li>
+</ul>
