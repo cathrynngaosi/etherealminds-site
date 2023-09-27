@@ -9,7 +9,7 @@ function Footer() {
       <div>
         <img src={getImage("/images/EMLogo.svg")} alt="" className="h-14" />
       </div>
-      <div className="flex flex-row items-center space-x-6 md:flex-col md:space-x-0 md:space-y-3">
+      <div className="flex flex-col items-center space-x-3 space-y-3 md:space-x-6">
         <div className="space-x-4">
           <Link to="/"> home </Link>
           <Link to="/shop"> shop </Link>

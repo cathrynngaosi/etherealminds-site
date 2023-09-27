@@ -1,6 +1,6 @@
 function HeroImages() {
   return (
-    <section className="bg-gift-image bg-cover bg-no-repeat p-80"></section>
+    <section className="h-[50vh] bg-gift-image bg-cover bg-no-repeat lg:h-[70vh]"></section>
   );
 }
 
